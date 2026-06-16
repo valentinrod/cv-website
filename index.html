@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Valentín Rodríguez — Founder & AI Builder</title>
+<meta name="description" content="Valentín Rodríguez — Founder & CEO at Supertest. Cofounder who builds AI agents, skills, and automated workflows with Claude Code to run leaner, more efficient companies." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0d;
+    --bg-soft:#111114;
+    --card:#15151a;
+    --card-border:#23232a;
+    --text:#f2f2f4;
+    --text-dim:#9a9aa3;
+    --text-faint:#65656e;
+    --accent:#8b8bf9;
+    --accent-soft:rgba(139,139,249,0.12);
+    --good:#5fe3a1;
+    --radius:18px;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  .glow{
+    position:fixed;
+    top:-200px;
+    left:50%;
+    transform:translateX(-50%);
+    width:900px;
+    height:600px;
+    background:radial-gradient(circle, rgba(139,139,249,0.18), transparent 70%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  nav{
+    position:sticky;
+    top:0;
+    z-index:10;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:18px 24px;
+    backdrop-filter:blur(10px);
+    background:rgba(10,10,13,0.7);
+  }
+  nav .brand{font-weight:700;font-size:15px;letter-spacing:-0.2px;}
+  nav .links{display:flex;gap:18px;font-size:13px;color:var(--text-dim);}
+  nav .links a:hover{color:var(--text);}
+  nav .links{display:none;}
+  @media(min-width:640px){ nav .links{display:flex;} }
+
+  main{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 24px 80px;
+    position:relative;
+    z-index:1;
+  }
+
+  /* HERO */
+  .hero{
+    padding:64px 0 48px;
+    text-align:center;
+  }
+  .avatar{
+    width:172px;
+    height:172px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center 35%;
+    margin:0 auto 22px;
+    display:block;
+    border:2px solid var(--card-border);
+    box-shadow:0 0 0 7px var(--accent-soft);
+  }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 14px;
+    border-radius:999px;
+    background:rgba(95,227,161,0.1);
+    border:1px solid rgba(95,227,161,0.25);
+    color:var(--good);
+    font-size:12.5px;
+    font-weight:600;
+    margin-bottom:24px;
+  }
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--good);box-shadow:0 0 0 3px rgba(95,227,161,0.25);}
+  .hero h1{
+    font-size:clamp(32px,6vw,48px);
+    font-weight:800;
+    letter-spacing:-1.2px;
+    margin:0 0 10px;
+  }
+  .hero .role{
+    font-size:17px;
+    color:var(--text-dim);
+    font-weight:500;
+    margin:0 0 6px;
+  }
+  .hero .loc{
+    font-size:14px;
+    color:var(--text-faint);
+    margin:0 0 28px;
+  }
+  .cta-row{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:28px;
+  }
+  .btn{
+    padding:11px 22px;
+    border-radius:12px;
+    font-size:14px;
+    font-weight:600;
+    transition:transform .15s ease, opacity .15s ease;
+    border:1px solid transparent;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--text);color:#0a0a0d;}
+  .btn-primary:hover{opacity:.9;}
+  .btn-secondary{background:var(--card);border:1px solid var(--card-border);color:var(--text);}
+  .btn-secondary:hover{border-color:var(--accent);}
+
+  .contact-strip{
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    flex-wrap:wrap;
+    font-size:13px;
+    color:var(--text-dim);
+  }
+  .contact-strip span{display:inline-flex;align-items:center;gap:6px;}
+
+  /* SECTIONS */
+  section{padding:36px 0;border-top:1px solid var(--card-border);}
+  section.hero{border-top:none;}
+  .section-label{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 16px;
+  }
+  .profile-text p{color:var(--text-dim);font-size:15px;margin:0 0 14px;}
+
+  /* EXPERIENCE */
+  .job{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:18px;
+    padding:18px 0;
+  }
+  .job + .job{border-top:1px solid var(--card-border);}
+  .job .when{font-size:12.5px;color:var(--text-faint);font-weight:600;padding-top:2px;white-space:nowrap;}
+  .job .what .co-row{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .job h3{margin:0;font-size:16px;font-weight:700;}
+  .job .company{font-size:13px;color:var(--accent);font-weight:600;}
+  .job .blurb{font-size:13.5px;color:var(--text-dim);margin:6px 0 10px;}
+  .job ul{margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px;}
+  .job ul li{margin-bottom:5px;}
+  .job ul li strong{color:var(--text);}
+  @media(max-width:560px){
+    .job{grid-template-columns:1fr;gap:6px;}
+  }
+
+  /* EDUCATION / CERTS */
+  .entry{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:14px;
+    padding:14px 0;
+    flex-wrap:wrap;
+  }
+  .entry + .entry{border-top:1px solid var(--card-border);}
+  .entry .left h3{margin:0 0 4px;font-size:15px;font-weight:700;}
+  .entry .left p{margin:0;font-size:13px;color:var(--text-dim);}
+  .entry .right{font-size:12.5px;color:var(--text-faint);font-weight:600;text-align:right;white-space:nowrap;}
+
+  /* SKILLS */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:18px;
+  }
+  .skill-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:var(--radius);
+    padding:18px;
+  }
+  .skill-card h3{margin:0 0 12px;font-size:14px;font-weight:700;}
+  .skill-card .tags{display:flex;flex-wrap:wrap;gap:7px;}
+  .tag{
+    font-size:12px;
+    padding:5px 10px;
+    border-radius:999px;
+    background:var(--accent-soft);
+    color:#c8c8fc;
+    border:1px solid rgba(139,139,249,0.25);
+  }
+
+  /* LANGUAGES */
+  .lang-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .lang-pill{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    padding:12px 16px;
+    flex:1;
+    min-width:160px;
+  }
+  .lang-pill .flag{font-size:20px;}
+  .lang-pill h4{margin:0;font-size:14px;}
+  .lang-pill span{font-size:12px;color:var(--text-faint);}
+
+  /* HONORS */
+  .honor{
+    display:flex;
+    gap:14px;
+    padding:14px 0;
+    align-items:flex-start;
+  }
+  .honor + .honor{border-top:1px solid var(--card-border);}
+  .honor .icon{font-size:18px;margin-top:1px;}
+  .honor h3{margin:0 0 3px;font-size:14.5px;font-weight:700;}
+  .honor p{margin:0;font-size:13px;color:var(--text-dim);}
+
+  /* COMPANIES FOUNDED */
+  .company-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:var(--radius);
+    padding:20px;
+    margin-bottom:16px;
+  }
+  .company-head{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:10px;
+    flex-wrap:wrap;
+  }
+  .company-logo{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:var(--accent-soft);
+    color:#c8c8fc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:14px;
+    border:1px solid rgba(139,139,249,0.25);
+    flex-shrink:0;
+  }
+  .company-card h3{margin:0;font-size:16px;font-weight:700;}
+  .company-card .role{font-size:13px;color:var(--accent);font-weight:600;margin:1px 0 0;}
+  .company-card .when{font-size:12px;color:var(--text-faint);font-weight:600;margin-left:auto;white-space:nowrap;}
+  .company-card .blurb{font-size:13.5px;color:var(--text-dim);margin:0 0 10px;}
+  .company-card ul{margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px;}
+  .company-card ul li{margin-bottom:5px;}
+  .company-card ul li strong{color:var(--text);}
+
+  /* PROJECTS */
+  .project-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:var(--radius);
+    padding:20px;
+    margin-bottom:16px;
+  }
+  .project-card h3{margin:0 0 6px;font-size:15.5px;font-weight:700;}
+  .project-card .tagline{font-size:13.5px;color:var(--text-dim);margin:0 0 12px;}
+  .project-card .stack{display:flex;flex-wrap:wrap;gap:6px;}
+  .project-card .stack .tag{font-size:11px;padding:4px 9px;}
+
+  /* EVENTS */
+  .events-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+  }
+  .event-card{
+    border:1px dashed var(--card-border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--card);
+  }
+  .event-photo{
+    height:130px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--bg-soft);
+    color:var(--text-faint);
+    font-size:13px;
+    gap:6px;
+  }
+  .event-card .info{padding:14px;}
+  .event-card h3{margin:0 0 4px;font-size:14px;font-weight:700;}
+  .event-card p{margin:0;font-size:12.5px;color:var(--text-dim);}
+
+  footer{
+    text-align:center;
+    padding:48px 0 60px;
+  }
+  footer h2{font-size:26px;font-weight:800;margin:0 0 10px;letter-spacing:-0.5px;}
+  footer p{color:var(--text-dim);font-size:14px;margin:0 0 24px;}
+  footer .links{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    font-size:13px;
+    color:var(--text-faint);
+    margin-top:36px;
+    flex-wrap:wrap;
+  }
+  footer .links a:hover{color:var(--text-dim);}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+
+<nav>
+  <span class="brand">Valentín Rodríguez</span>
+  <span class="links">
+    <a href="#companies">Companies</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </span>
+</nav>
+
+<main>
+
+  <header class="hero" id="top">
+    <img class="avatar" src="./assets/valentin-profile-face.jpeg" alt="Valentín Rodríguez" />
+    <span class="badge"><span class="dot"></span>Open to new opportunities</span>
+    <h1>Valentín Rodríguez</h1>
+    <p class="role">Founder &amp; CEO, Supertest — Building AI Agents &amp; GTM Systems with Claude Code</p>
+    <p class="loc">📍 Barranquilla, Colombia</p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:valentin.rj@hotmail.com">Get in touch</a>
+      <a class="btn btn-secondary" href="./Valentin-Rodriguez-CV.pdf" download>Download CV</a>
+    </div>
+
+    <div class="contact-strip">
+      <span>✉️ valentin.rj@hotmail.com</span>
+      <span>🇺🇸 +1 754 202 5286</span>
+      <span>🇨🇴 +57 312 623 0946</span>
+    </div>
+  </header>
+
+  <section id="profile">
+    <p class="section-label">Profile</p>
+    <div class="profile-text">
+      <p>Founder and operator who turns business problems into working software — using <strong style="color:var(--text)">Claude Code</strong> as my engineering team. At Supertest, I diagnose the bottleneck in the sales or ops process and then build the agent, skill, or automated workflow that removes it: a Slack-based sales orchestrator, a WhatsApp SDR/support agent, cold-outreach and call-review pipelines, and the internal systems that keep a founder-led GTM motion running without manual busywork.</p>
+      <p>That same instinct — understand the problem first, then build the leanest technical solution — comes from 7+ years leading People &amp; Talent across LATAM and the U.S., co-founding a staff augmentation agency that recruited and managed 100+ software professionals for VC-backed companies. Now I apply it to building AI-native products and GTM infrastructure myself, end to end.</p>
+    </div>
+  </section>
+
+  <section id="companies">
+    <p class="section-label">Companies Founded</p>
+
+    <div class="company-card">
+      <div class="company-head">
+        <span class="company-logo">S</span>
+        <div>
+          <h3>Supertest</h3>
+          <p class="role">Founder &amp; CEO</p>
+        </div>
+        <span class="when">Jan 2026 – Present</span>
+      </div>
+      <p class="blurb">AI-personalized EdTech platform preparing Colombian students for the Saber 11 and Saber Pro standardized tests, sold B2B to schools and universities. Barranquilla, Colombia.</p>
+      <ul>
+        <li>Designed and built, personally, with <strong>Claude Code</strong>, a 9-project GTM automation portfolio that runs the company's sales motion: an internal Slack sales orchestrator, an AI WhatsApp SDR/support agent, a cold-outreach engine, a pre-meeting research agent, a call-reviewer that writes CRM notes and tasks, a proposal generator, and a newsletter agent.</li>
+        <li>Acts as the company's own GTM engineer — integrating the Anthropic API, Attio CRM, Slack, GitHub, Fireflies, Linear, and Make.com into one operating system for a founder-led sales motion, running 24/7 on a self-managed VPS.</li>
+        <li>Owns product vision, B2B sales (rectors, vicerrectores, deans), and go-to-market strategy for the Costa Caribe region.</li>
+      </ul>
+    </div>
+
+    <div class="company-card">
+      <div class="company-head">
+        <span class="company-logo">A</span>
+        <div>
+          <h3>Avvy Talent</h3>
+          <p class="role">Co-Founder | Head of People &amp; Talent Acquisition</p>
+        </div>
+        <span class="when">Jan 2022 – Present</span>
+      </div>
+      <p class="blurb">LATAM-focused staff augmentation and recruiting agency serving U.S. and European tech companies.</p>
+      <ul>
+        <li>Co-founded and scaled the company into a trusted talent partner for international, VC-backed startups.</li>
+        <li>Recruited and managed <strong>100+ software engineers, data professionals, and technical roles</strong> across LATAM; led end-to-end talent acquisition, people operations, and organizational design for fully remote teams.</li>
+        <li>Introduced automation and AI-driven workflows to streamline recruiting, candidate screening, and internal processes.</li>
+      </ul>
+    </div>
+
+    <div class="company-card">
+      <div class="company-head">
+        <span class="company-logo">M</span>
+        <div>
+          <h3>MondayLoop</h3>
+          <p class="role">Co-Founder, GTM</p>
+        </div>
+        <span class="when">Jan 2025 – Aug 2025</span>
+      </div>
+      <p class="blurb">Consumer app devshop building and shipping mobile apps for the U.S. App Store market.</p>
+      <ul>
+        <li>Shipped and grew a portfolio of consumer iOS apps, including <strong>MacroMax</strong> (AI calorie tracker), <strong>DogDogScan</strong> (AI dog breed identifier) and a companion dog health/skin scanner, a line of image-to-anime apps, and an AI image generator for social media.</li>
+        <li>Drove the portfolio to <strong>1,000+ downloads</strong> and a consistent <strong>~$3K MRR</strong> combined across apps.</li>
+      </ul>
+    </div>
+
+    <div class="company-card">
+      <div class="company-head">
+        <span class="company-logo">R</span>
+        <div>
+          <h3>Rutana</h3>
+          <p class="role">Co-Founder</p>
+        </div>
+        <span class="when">Mar 2019 – Mar 2020</span>
+      </div>
+      <p class="blurb">Early-stage university car-sharing mobile application. Barranquilla, Colombia.</p>
+      <ul>
+        <li>Led early operations and business development; built strategic partnerships with universities.</li>
+        <li>Achieved <strong>500+ shared rides</strong> among <strong>2,000+ users</strong> across 4 partner universities.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <p class="section-label">Projects Built with Claude Code</p>
+    <p style="font-size:13px;color:var(--text-dim);margin:0 0 18px;">A 9-project GTM automation portfolio built solo for Supertest — designed, coded, and deployed with Claude Code, not a software background.</p>
+
+    <div class="project-card">
+      <h3>Sales Orchestrator (Slack Agent)</h3>
+      <p class="tagline">The command center: lives in #ventas, reads the live pipeline from the CRM, executes commercial tasks on command, and runs the other 8 agents by mention — zero terminal.</p>
+      <div class="stack">
+        <span class="tag">Claude Code</span><span class="tag">Anthropic API</span><span class="tag">Python</span><span class="tag">Slack Bolt (Socket Mode)</span><span class="tag">Attio API</span><span class="tag">GitHub API</span><span class="tag">DigitalOcean VPS + pm2</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>WhatsApp SDR &amp; Support Agent ("Claudia")</h3>
+      <p class="tagline">Qualifies inbound prospects and answers customer support over WhatsApp, with human-like typing delay, persistent conversation history, and Slack alerts routed by urgency.</p>
+      <div class="stack">
+        <span class="tag">Claude Code</span><span class="tag">Anthropic API</span><span class="tag">EvolutionAPI / Baileys</span><span class="tag">Docker</span><span class="tag">Python</span><span class="tag">VPS Deployment</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Cold Outreach Sequencer</h3>
+      <p class="tagline">Turns a CSV of target institutions into a researched, personalized multi-touch email + WhatsApp sequence, with auto stop-on-reply and CRM sync — no paid SaaS in the loop.</p>
+      <div class="stack">
+        <span class="tag">Claude Code</span><span class="tag">Anthropic API</span><span class="tag">Exa.ai</span><span class="tag">Gmail SMTP/IMAP</span><span class="tag">Attio API</span><span class="tag">Python</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Pre-Meeting Research Agent</h3>
+      <p class="tagline">Given an institution's name, generates a PDF brief with historical test results, comparatives, decision-makers, and sales angles — delivered to Slack in ~2 minutes, before every call.</p>
+      <div class="stack">
+        <span class="tag">Claude Code</span><span class="tag">Anthropic API</span><span class="tag">Exa.ai</span><span class="tag">Python</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Call Reviewer</h3>
+      <p class="tagline">Pulls the latest sales call transcript, analyzes objections and commitments, opens follow-up tasks in Linear, and writes a CRM note with a suggested deal stage — confirmed by a human, never auto-moved.</p>
+      <div class="stack">
+        <span class="tag">Claude Code</span><span class="tag">Anthropic API (Sonnet)</span><span class="tag">Fireflies.ai GraphQL</span><span class="tag">Linear API</span><span class="tag">Attio API</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Internal Wiki with Natural-Language Editing</h3>
+      <p class="tagline">A 22-page company wiki (product, sales, GTM, ops) that the Slack agent can update and redeploy on command — "document that we shipped X" becomes a real commit and a live site in under 2 minutes.</p>
+      <div class="stack">
+        <span class="tag">Claude Code</span><span class="tag">MkDocs Material</span><span class="tag">GitHub API</span><span class="tag">Vercel</span><span class="tag">Anthropic API</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>This Website</h3>
+      <p class="tagline">This CV site itself — built end to end with Claude Code, from layout and content to processing the profile photo.</p>
+      <div class="stack">
+        <span class="tag">Claude Code</span><span class="tag">HTML / CSS</span><span class="tag">Python (image processing)</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <p class="section-label">Work Experience</p>
+
+    <div class="job">
+      <div class="when">Nov 2021 – Mar 2022</div>
+      <div class="what">
+        <h3>Customer Experience Lead</h3>
+        <div class="company">Farmu · Barranquilla, Colombia</div>
+        <p class="blurb">VC-backed online drugstore marketplace.</p>
+        <ul>
+          <li>Built and scaled the <strong>Customer Experience function from scratch</strong>, including team hiring and training.</li>
+          <li>Implemented CRM systems, support tools, and performance KPIs.</li>
+          <li>Established feedback loops between Customer Support, Operations, Sales, and Product teams.</li>
+          <li>Analyzed operational, sales, and support data to improve customer retention and service quality.</li>
+          <li>Played a key role in professionalizing customer operations during a high-growth phase.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Jun 2020 – Oct 2021</div>
+      <div class="what">
+        <h3>Settlements Coordinator</h3>
+        <div class="company">Lean Solutions Group · Barranquilla, Colombia</div>
+        <ul>
+          <li>Led contractor settlement operations across <strong>two U.S. logistics terminals</strong>.</li>
+          <li>Implemented rate validation and control processes to prevent payment discrepancies and delays.</li>
+          <li>Strengthened contractor retention through clear, structured settlement communications.</li>
+          <li>Built dashboards and reports by importing settlement and operations data from internal systems.</li>
+          <li>Supported management with actionable insights to improve accuracy and efficiency across <strong>200+ monthly contractor payments</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Mar 2018 – Mar 2019</div>
+      <div class="what">
+        <h3>Commercial Credit Analyst</h3>
+        <div class="company">Banco Serfinanza · Barranquilla, Colombia</div>
+        <ul>
+          <li>Analyzed corporate clients' financial statements, credit history, and KPIs.</li>
+          <li>Supported credit approval decisions through risk assessment and financial modeling.</li>
+          <li>Prepared financial projections and reports for executive committee review.</li>
+          <li>Maintained direct communication with clients throughout evaluation processes.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <p class="section-label">Education</p>
+    <div class="entry">
+      <div class="left">
+        <h3>Bachelor's Degree in Business Administration</h3>
+        <p>Universidad del Norte — Barranquilla, Colombia</p>
+      </div>
+      <div class="right">Jan 2012 – Dec 2017</div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <p class="section-label">Certifications</p>
+    <div class="entry">
+      <div class="left">
+        <h3>Human Resources Management</h3>
+        <p>Valencia College — Orlando, FL, USA</p>
+      </div>
+      <div class="right">Jan 2014 – Jun 2014</div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <p class="section-label">Core Skills &amp; Tools</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>People &amp; Talent</h3>
+        <div class="tags">
+          <span class="tag">Talent Acquisition</span>
+          <span class="tag">Technical Recruiting</span>
+          <span class="tag">People Operations</span>
+          <span class="tag">Performance Frameworks</span>
+          <span class="tag">Staff Augmentation</span>
+          <span class="tag">Stakeholder Management</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>AI &amp; Automation</h3>
+        <div class="tags">
+          <span class="tag">Claude Code</span>
+          <span class="tag">Anthropic API (Sonnet / Haiku)</span>
+          <span class="tag">AI Agent Orchestration</span>
+          <span class="tag">Python Automation Scripting</span>
+          <span class="tag">Slack API (Bolt)</span>
+          <span class="tag">GitHub API</span>
+          <span class="tag">Vercel</span>
+          <span class="tag">Make.com</span>
+          <span class="tag">CRM API Integrations (Attio)</span>
+          <span class="tag">VPS Deployment (Docker / pm2)</span>
+          <span class="tag">Recruiting Analytics &amp; Reporting</span>
+          <span class="tag">ATS Management</span>
+          <span class="tag">Google Sheets / Excel</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Operational</h3>
+        <div class="tags">
+          <span class="tag">Customer Experience Ops</span>
+          <span class="tag">Process Design</span>
+          <span class="tag">Process Optimization</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="languages">
+    <p class="section-label">Languages</p>
+    <div class="lang-row">
+      <div class="lang-pill">
+        <span class="flag">🇨🇴</span>
+        <div><h4>Spanish</h4><span>Native</span></div>
+      </div>
+      <div class="lang-pill">
+        <span class="flag">🇺🇸</span>
+        <div><h4>English</h4><span>Professional / Fluent</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="events">
+    <p class="section-label">Events</p>
+    <p style="font-size:13px;color:var(--text-dim);margin:0 0 18px;">Community events I've hosted or sponsored — photos coming soon.</p>
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-photo">📷 Add photo</div>
+        <div class="info">
+          <h3>Community Sponsor — Caribedev.org</h3>
+          <p>Largest developer community in the Colombian Caribbean · 2023 – Present</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-photo">📷 Add photo</div>
+        <div class="info">
+          <h3>Event Host — Supabase Community Meetups</h3>
+          <p>Bogotá, Barranquilla &amp; Cartagena · 2023 – Present</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-photo">📷 Add photo</div>
+        <div class="info">
+          <h3>RevenueCat Shipathon</h3>
+          <p>Barranquilla · 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="honors">
+    <p class="section-label">Honors &amp; Recognition</p>
+    <div class="honor">
+      <span class="icon">🏆</span>
+      <div><h3>Endeavor Accelerator Program — Dream Bigger</h3><p>2024</p></div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Let's work together</h2>
+    <p>Open to GTM Engineering, AI Builder, and People &amp; Talent leadership roles and partnerships.</p>
+    <a class="btn btn-primary" href="mailto:valentin.rj@hotmail.com">valentin.rj@hotmail.com</a>
+    <div class="links">
+      <a href="#top">Back to top</a>
+      <a href="https://www.linkedin.com/in/valenrodriguez/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="./Valentin-Rodriguez-CV.pdf" download>Download CV</a>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
