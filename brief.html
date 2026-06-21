@@ -70,12 +70,15 @@
 
   /* HERO */
   .masthead{
+    padding:44px 0 36px;
+    border-bottom:1px solid var(--rule);
+  }
+  .masthead-top{
     display:grid;
     grid-template-columns:1fr 148px;
     gap:34px;
-    align-items:start;
-    padding:44px 0 36px;
-    border-bottom:1px solid var(--rule);
+    align-items:center;
+    margin-bottom:26px;
   }
   .doc-label{
     font-family:var(--mono);
@@ -152,8 +155,8 @@
     display:block;
   }
   @media(max-width:560px){
-    .masthead{grid-template-columns:1fr;}
-    .photo-frame{order:-1;width:104px;height:130px;}
+    .masthead-top{grid-template-columns:1fr;}
+    .photo-frame{order:-1;width:104px;height:130px;margin-bottom:6px;}
   }
 
   /* TRACK RECORD */
@@ -367,7 +370,7 @@
 <body>
 
 <nav>
-  <span class="brand">VR — EXECUTIVE PROFILE</span>
+  <span class="brand">VR — Profile</span>
   <span class="links">
     <a href="#companies">Companies</a>
     <a href="#projects">Projects</a>
@@ -379,26 +382,28 @@
 <main>
 
   <header class="masthead" id="top">
-    <div>
-      <p class="doc-label">Field Brief — Curriculum Vitae</p>
-      <h1>Valentín Rodríguez</h1>
-      <p class="role">Co-Founder, Supertest — building AI agents &amp; GTM systems with Claude Code.</p>
-      <p class="ask-line"><b>Open to:</b> GTM Leadership roles · People &amp; Talent Leadership roles — at tech startups.</p>
-      <ul class="meta-list">
-        <li><a href="https://www.linkedin.com/in/valenrodriguez/" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://github.com/valentinrod" target="_blank" rel="noopener">GitHub</a></li>
-        <li>Barranquilla, Colombia</li>
-        <li><a href="mailto:valentin.rj@hotmail.com">valentin.rj@hotmail.com</a></li>
-        <li>+1 754 202 5286 (US)</li>
-        <li>+57 312 623 0946 (CO)</li>
-      </ul>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="mailto:valentin.rj@hotmail.com">Get in touch</a>
-        <a class="btn btn-ghost" href="./Valentin-Rodriguez-CV.pdf" download>Download PDF</a>
+    <div class="masthead-top">
+      <div>
+        <p class="doc-label">Field Brief — Curriculum Vitae</p>
+        <h1>Valentín Rodríguez</h1>
+        <p class="role">Co-Founder, Supertest — building AI agents &amp; GTM systems with Claude Code.</p>
+      </div>
+      <div class="photo-frame">
+        <img src="./assets/valentin-profile-portrait.jpeg" alt="Valentín Rodríguez" />
       </div>
     </div>
-    <div class="photo-frame">
-      <img src="./assets/valentin-profile-portrait.jpeg" alt="Valentín Rodríguez" />
+    <p class="ask-line"><b>Open to:</b> GTM Leadership roles · People &amp; Talent Leadership roles — at tech startups.</p>
+    <ul class="meta-list">
+      <li><a href="https://www.linkedin.com/in/valenrodriguez/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/valentinrod" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Barranquilla, Colombia</li>
+      <li><a href="mailto:valentin.rj@hotmail.com">valentin.rj@hotmail.com</a></li>
+      <li>+1 754 202 5286 (US)</li>
+      <li>+57 312 623 0946 (CO)</li>
+    </ul>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="mailto:valentin.rj@hotmail.com">Get in touch</a>
+      <a class="btn btn-ghost" href="./Valentin-Rodriguez-CV.pdf" download>Download PDF</a>
     </div>
   </header>
 
