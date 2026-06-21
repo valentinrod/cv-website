@@ -15,8 +15,8 @@
     --ink-soft:#52565d;
     --ink-faint:#8b8f96;
     --rule:#d8d9dc;
-    --navy:#1c3d5a;
-    --navy-soft:rgba(28,61,90,.06);
+    --green:#1f5c3f;
+    --green-soft:rgba(31,92,63,.07);
     --sans:'Public Sans', -apple-system, sans-serif;
     --mono:'IBM Plex Mono', 'SF Mono', monospace;
     --maxw:760px;
@@ -33,7 +33,7 @@
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit;}
-  ::selection{background:var(--navy);color:#fff;}
+  ::selection{background:var(--green);color:#fff;}
 
   nav{
     display:flex;
@@ -58,7 +58,7 @@
     color:var(--ink-soft);
     text-decoration:none;
   }
-  nav .links a:hover{color:var(--navy);}
+  nav .links a:hover{color:var(--green);}
   nav .links{display:none;}
   @media(min-width:640px){ nav .links{display:block;} }
 
@@ -71,8 +71,8 @@
   /* HERO */
   .masthead{
     display:grid;
-    grid-template-columns:1fr 96px;
-    gap:30px;
+    grid-template-columns:1fr 148px;
+    gap:34px;
     align-items:start;
     padding:44px 0 36px;
     border-bottom:1px solid var(--rule);
@@ -82,7 +82,7 @@
     font-size:11px;
     letter-spacing:.1em;
     text-transform:uppercase;
-    color:var(--navy);
+    color:var(--green);
     margin:0 0 16px;
     font-weight:600;
   }
@@ -103,14 +103,14 @@
     font-family:var(--mono);
     font-size:12.5px;
     color:var(--ink);
-    background:var(--navy-soft);
-    border-left:2px solid var(--navy);
+    background:var(--green-soft);
+    border-left:2px solid var(--green);
     padding:10px 14px;
     margin:0 0 18px;
     max-width:54ch;
     line-height:1.55;
   }
-  .ask-line b{color:var(--navy);}
+  .ask-line b{color:var(--green);}
   .meta-list{
     list-style:none;
     margin:0 0 4px;
@@ -123,7 +123,7 @@
   }
   .meta-list li:not(:last-child)::after{content:"  |  ";color:var(--ink-faint);}
   .meta-list a{text-decoration:none;border-bottom:1px solid var(--ink-faint);}
-  .meta-list a:hover{color:var(--navy);border-color:var(--navy);}
+  .meta-list a:hover{color:var(--green);border-color:var(--green);}
   .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
   .btn{
     display:inline-block;
@@ -136,24 +136,24 @@
     border:1px solid var(--ink);
   }
   .btn-primary{background:var(--ink);color:var(--paper);}
-  .btn-primary:hover{background:var(--navy);border-color:var(--navy);}
+  .btn-primary:hover{background:var(--green);border-color:var(--green);}
   .btn-ghost{color:var(--ink);}
-  .btn-ghost:hover{color:var(--navy);border-color:var(--navy);}
+  .btn-ghost:hover{color:var(--green);border-color:var(--green);}
   .photo-frame{
-    width:96px;height:120px;
+    width:148px;height:185px;
     border:1px solid var(--ink);
     overflow:hidden;
   }
   .photo-frame img{
     width:100%;height:100%;
     object-fit:cover;
-    object-position:center 22%;
-    filter:grayscale(.45) contrast(1.0) brightness(1.02);
+    object-position:center 18%;
+    filter:grayscale(1) contrast(1.05) brightness(1.04);
     display:block;
   }
   @media(max-width:560px){
     .masthead{grid-template-columns:1fr;}
-    .photo-frame{order:-1;width:64px;height:80px;}
+    .photo-frame{order:-1;width:104px;height:130px;}
   }
 
   /* TRACK RECORD */
@@ -173,7 +173,7 @@
     font-family:var(--mono);
     font-weight:600;
     font-size:clamp(22px,3.5vw,30px);
-    color:var(--navy);
+    color:var(--green);
     display:block;
     margin-bottom:6px;
     letter-spacing:-.01em;
@@ -201,7 +201,7 @@
   .sec-head .num{
     font-family:var(--mono);
     font-size:12px;
-    color:var(--navy);
+    color:var(--green);
     font-weight:600;
   }
   .sec-head h2{
@@ -227,8 +227,8 @@
     font-size:10.5px;
     letter-spacing:.04em;
     text-transform:uppercase;
-    color:var(--navy);
-    border:1px solid var(--navy);
+    color:var(--green);
+    border:1px solid var(--green);
     padding:2px 7px;
     margin:6px 0 10px;
   }
@@ -236,18 +236,27 @@
   .entry-row p.blurb{margin:0 0 10px;color:var(--ink-soft);font-size:14px;max-width:60ch;}
   .entry-row ul{margin:0;padding:0;list-style:none;max-width:60ch;}
   .entry-row ul li{position:relative;padding-left:16px;margin-bottom:7px;font-size:13.5px;color:var(--ink-soft);}
-  .entry-row ul li::before{content:"–";position:absolute;left:0;color:var(--navy);}
+  .entry-row ul li::before{content:"–";position:absolute;left:0;color:var(--green);}
   .entry-row ul li strong{color:var(--ink);font-weight:600;}
   .entry-row.compact{padding:16px 0;}
   .entry-row.compact h3{font-size:14.5px;}
+  .co-link{font-size:12px;color:var(--ink-faint);text-decoration:none;margin-left:6px;}
+  .co-link:hover{color:var(--green);}
 
   /* PROJECTS */
   .proj-flagship{padding:24px 0;border-top:1px solid var(--rule);}
   section .proj-flagship:first-of-type{border-top:none;padding-top:0;}
+  .proj-idx{
+    display:block;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-faint);
+    margin-bottom:6px;
+  }
   .shot-placeholder{
     width:100%;
     aspect-ratio:16/7;
-    background:var(--navy-soft);
+    background:var(--green-soft);
     border:1px solid var(--rule);
     display:flex;
     align-items:center;
@@ -261,7 +270,7 @@
   .stacklist{font-family:var(--mono);font-size:11px;color:var(--ink-faint);margin:0;}
   .know-more{
     appearance:none;border:none;background:none;
-    color:var(--navy);
+    color:var(--green);
     font-family:var(--mono);
     font-size:11.5px;
     text-transform:uppercase;
@@ -269,7 +278,7 @@
     cursor:pointer;
     padding:0;
     margin-top:8px;
-    border-bottom:1px solid var(--navy);
+    border-bottom:1px solid var(--green);
   }
   .know-more:hover{opacity:.7;}
 
@@ -285,7 +294,7 @@
   .proj-list-row .idx{font-family:var(--mono);font-size:11px;color:var(--ink-faint);}
   .proj-list-row h4{font-size:13.5px;font-weight:700;margin:0 0 3px;}
   .proj-list-row p{font-size:13px;color:var(--ink-soft);margin:0 0 5px;max-width:60ch;}
-  .proj-list-row .stacklist a{color:var(--navy);border-bottom:1px solid var(--navy);text-decoration:none;}
+  .proj-list-row .stacklist a{color:var(--green);border-bottom:1px solid var(--green);text-decoration:none;}
 
   /* CREDENTIALS / CAPABILITIES */
   .cred-line{font-size:13.5px;color:var(--ink-soft);padding:12px 0;border-top:1px solid var(--rule);}
@@ -294,18 +303,31 @@
 
   .label-row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:13px 0;border-top:1px solid var(--rule);}
   .label-row:first-child{border-top:none;padding-top:0;}
-  .label-row .cat{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);padding-top:1px;}
+  .label-row .cat{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--green);padding-top:1px;}
   .label-row .list{font-size:13.5px;color:var(--ink-soft);}
   @media(max-width:560px){ .label-row{grid-template-columns:1fr;gap:4px;} }
 
   .community-line{font-size:13.5px;color:var(--ink-soft);max-width:64ch;}
+  .community-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .community-grid h4{font-size:13.5px;font-weight:700;margin:0 0 4px;}
+  .community-grid p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+  .photo-pending{
+    width:100%;aspect-ratio:4/3;
+    border:1px solid var(--rule);
+    background:var(--green-soft);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;color:var(--ink-faint);
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  @media(max-width:600px){ .community-grid{grid-template-columns:1fr;} }
 
   footer{padding:44px 0 30px;}
   footer h2{font-weight:700;font-size:clamp(22px,4vw,28px);margin:0 0 12px;}
   footer .blurb{color:var(--ink-soft);font-size:14.5px;margin:0 0 20px;max-width:50ch;}
   .colophon{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;}
   .colophon a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid var(--ink-faint);padding-bottom:2px;}
-  .colophon a:hover{color:var(--navy);border-color:var(--navy);}
+  .colophon a:hover{color:var(--green);border-color:var(--green);}
   .fineprint{margin-top:34px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);}
 
   /* MODAL */
@@ -321,7 +343,7 @@
   dialog.project-modal::backdrop{background:rgba(20,20,22,.5);}
   .modal-image{
     width:100%;aspect-ratio:16/9;
-    background:var(--navy-soft);
+    background:var(--green-soft);
     border-bottom:1px solid var(--rule);
     display:flex;align-items:center;justify-content:center;
     color:var(--ink-faint);font-family:var(--mono);font-size:11px;
@@ -332,13 +354,13 @@
     width:34px;height:34px;border:none;border-left:1px solid var(--rule);border-bottom:1px solid var(--rule);
     background:var(--paper);font-size:16px;cursor:pointer;color:var(--ink);
   }
-  .modal-close:hover{color:var(--navy);}
+  .modal-close:hover{color:var(--green);}
   .modal-body{padding:24px 26px 28px;}
-  .modal-eyebrow{font-family:var(--mono);font-size:10.5px;color:var(--navy);margin:0 0 8px;text-transform:uppercase;font-weight:600;}
+  .modal-eyebrow{font-family:var(--mono);font-size:10.5px;color:var(--green);margin:0 0 8px;text-transform:uppercase;font-weight:600;}
   .modal-body h3{font-size:18px;margin:0 0 10px;font-weight:700;}
   .modal-body p{font-size:13.5px;color:var(--ink-soft);margin:0 0 12px;line-height:1.6;}
   .modal-label{font-family:var(--mono);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-faint);margin:0 0 4px;}
-  .modal-link{color:var(--navy);font-weight:600;text-decoration:none;font-size:13px;border-bottom:1px solid var(--navy);}
+  .modal-link{color:var(--green);font-weight:600;text-decoration:none;font-size:13px;border-bottom:1px solid var(--green);}
   .modal-note{font-size:12.5px;color:var(--ink-faint);font-style:italic;}
 </style>
 </head>
@@ -363,6 +385,8 @@
       <p class="role">Co-Founder, Supertest — building AI agents &amp; GTM systems with Claude Code.</p>
       <p class="ask-line"><b>Open to:</b> GTM Leadership roles · People &amp; Talent Leadership roles — at tech startups.</p>
       <ul class="meta-list">
+        <li><a href="https://www.linkedin.com/in/valenrodriguez/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/valentinrod" target="_blank" rel="noopener">GitHub</a></li>
         <li>Barranquilla, Colombia</li>
         <li><a href="mailto:valentin.rj@hotmail.com">valentin.rj@hotmail.com</a></li>
         <li>+1 754 202 5286 (US)</li>
@@ -396,9 +420,9 @@
     <div class="sec-head"><span class="num">2.0</span><h2>Companies Founded</h2></div>
 
     <div class="entry-row">
-      <div class="entry-top"><h3>Supertest</h3><span class="dates">Jan 2026 — Present</span></div>
+      <div class="entry-top"><h3>Supertest <a class="co-link" href="https://supertest.co" target="_blank" rel="noopener">↗ supertest.co</a></h3><span class="dates">Jan 2026 — Present</span></div>
       <span class="status-tag">Active — Scaling</span>
-      <p class="role-line">Co-Founder</p>
+      <p class="role-line">Partner</p>
       <p class="blurb">AI-personalized EdTech platform preparing Colombian students for the Saber 11 and Saber Pro standardized tests, sold B2B to schools and universities. Barranquilla, Colombia.</p>
       <ul>
         <li>Designed and built, personally, with <strong>Claude Code</strong>, a 9-project GTM automation portfolio that runs the company's sales motion: an internal Slack sales orchestrator, an AI WhatsApp SDR/support agent, a cold-outreach engine, a pre-meeting research agent, a call-reviewer that writes CRM notes and tasks, a proposal generator, and a newsletter agent.</li>
@@ -408,11 +432,12 @@
     </div>
 
     <div class="entry-row compact">
-      <div class="entry-top"><h3>Avvy Talent</h3><span class="dates">Jan 2022 — Present</span></div>
-      <span class="status-tag">Active</span>
+      <div class="entry-top"><h3>Avvy Talent <a class="co-link" href="https://avvy.co" target="_blank" rel="noopener">↗ avvy.co</a></h3><span class="dates">Jan 2022 — Jun 2026</span></div>
+      <span class="status-tag">Exited — Acquired Jun 2026</span>
       <p class="role-line">Co-Founder | Head of People &amp; Talent Acquisition</p>
       <p class="blurb">LATAM-focused staff augmentation and recruiting agency serving U.S. and European tech companies.</p>
       <ul>
+        <li>Led the company to a successful exit, <strong>acquired by another recruiting agency in June 2026</strong> after 4+ years scaling the business.</li>
         <li>Recruited and managed <strong>100+ software engineers, data professionals, and technical roles</strong> across LATAM; led end-to-end talent acquisition, people operations, and organizational design for fully remote teams.</li>
         <li>Introduced automation and AI-driven workflows to streamline recruiting, candidate screening, and internal processes.</li>
       </ul>
@@ -447,6 +472,7 @@
 
     <div class="proj-flagship">
       <div class="shot-placeholder">Add product screenshot / demo</div>
+      <span class="proj-idx">01</span>
       <h3>Sales Orchestrator (Slack Agent)</h3>
       <p class="blurb">The command center: lives in #ventas, reads the live pipeline from the CRM, executes commercial tasks on command, and runs the other 8 agents by mention — zero terminal.</p>
       <p class="stacklist">Claude Code · Anthropic API · Python · Slack Bolt (Socket Mode) · Attio API · GitHub API · DigitalOcean VPS + pm2</p>
@@ -455,6 +481,7 @@
 
     <div class="proj-flagship">
       <div class="shot-placeholder">Add product screenshot / demo</div>
+      <span class="proj-idx">02</span>
       <h3>WhatsApp SDR &amp; Support Agent ("Claudia")</h3>
       <p class="blurb">Qualifies inbound prospects and answers customer support over WhatsApp, with human-like typing delay, persistent conversation history, and Slack alerts routed by urgency.</p>
       <p class="stacklist">Claude Code · Anthropic API · EvolutionAPI / Baileys · Docker · Python · VPS Deployment</p>
@@ -556,8 +583,8 @@
       <div class="list">Claude Code · Anthropic API (Sonnet / Haiku) · Python Automation · Slack API (Bolt) · GitHub API · Attio CRM API · Make.com · Vercel · VPS Deployment (Docker / pm2)</div>
     </div>
     <div class="label-row">
-      <div class="cat">Operational</div>
-      <div class="list">Customer Experience Ops · Process Design · Process Optimization</div>
+      <div class="cat">GTM</div>
+      <div class="list">Lead Generation · Outbound Sequencing · CRM Automation · 1:1 Closing · GTM Strategy · Negotiation · Pipeline Management · Process Optimization</div>
     </div>
     <div class="label-row">
       <div class="cat">Languages</div>
@@ -567,7 +594,23 @@
 
   <section id="community">
     <div class="sec-head"><span class="num">7.0</span><h2>Community</h2></div>
-    <p class="community-line">Caribedev.org — community sponsor, 2023–Present · Supabase Community Meetups — host, Bogotá / Barranquilla / Cartagena, 2023–Present · RevenueCat Shipathon — Barranquilla, 2025</p>
+    <div class="community-grid">
+      <div>
+        <div class="photo-pending">Add photo</div>
+        <h4>Caribedev.org</h4>
+        <p>Community sponsor · 2023–Present</p>
+      </div>
+      <div>
+        <div class="photo-pending">Add photo</div>
+        <h4>Supabase Community Meetups</h4>
+        <p>Host · Bogotá / Barranquilla / Cartagena · 2023–Present</p>
+      </div>
+      <div>
+        <div class="photo-pending">Add photo</div>
+        <h4>RevenueCat Shipathon</h4>
+        <p>Barranquilla · 2025</p>
+      </div>
+    </div>
   </section>
 
   <footer id="contact">
