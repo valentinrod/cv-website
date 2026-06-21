@@ -266,6 +266,13 @@
     overflow:hidden;
   }
   .shot-placeholder:focus-visible, .photo-pending:focus-visible{outline:2px solid var(--green);outline-offset:2px;}
+  .shot-placeholder img, .photo-pending img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
   .shot-placeholder::after, .photo-pending::after{
     content:"⤢ Click to expand";
     position:absolute;
@@ -381,7 +388,9 @@
     display:flex;align-items:center;justify-content:center;
     color:var(--ink-faint);font-family:var(--mono);font-size:11px;
     position:relative;
+    overflow:hidden;
   }
+  #modal-img{width:100%;height:100%;object-fit:cover;display:block;}
   .modal-close{
     position:absolute;top:0;right:0;
     width:34px;height:34px;border:none;border-left:1px solid var(--rule);border-bottom:1px solid var(--rule);
@@ -536,8 +545,8 @@
 
     <div class="proj-flagship">
       <div class="shot-grid">
-        <button type="button" class="shot-placeholder" onclick="openLightbox(null,'Sales Orchestrator — command + response in #ventas')">1 — Command + response<br>in #ventas</button>
-        <button type="button" class="shot-placeholder" onclick="openLightbox(null,'Sales Orchestrator — CRM update / multi-agent run')">2 — CRM update or<br>multi-agent run</button>
+        <button type="button" class="shot-placeholder" onclick="openLightbox('./assets/proj-sales-orchestrator-1.jpg','Sales Orchestrator — followups command generating the pipeline draft in #ventas')"><img src="./assets/proj-sales-orchestrator-1.jpg" alt="Slack — followups command and pipeline draft" loading="lazy"></button>
+        <button type="button" class="shot-placeholder" onclick="openLightbox('./assets/proj-sales-orchestrator-2.jpg','Sales Orchestrator — investiga command generating a pre-meeting research PDF')"><img src="./assets/proj-sales-orchestrator-2.jpg" alt="Slack — investiga command and research PDF" loading="lazy"></button>
       </div>
       <span class="proj-idx">01</span>
       <h3>Sales Orchestrator (Slack Agent)</h3>
@@ -548,8 +557,8 @@
 
     <div class="proj-flagship">
       <div class="shot-grid">
-        <button type="button" class="shot-placeholder" onclick="openLightbox(null,'Claudia — WhatsApp conversation qualifying a prospect')">1 — WhatsApp convo,<br>qualifying a prospect</button>
-        <button type="button" class="shot-placeholder" onclick="openLightbox(null,'Claudia — Slack alert triggered by the conversation')">2 — Slack alert triggered<br>by the conversation</button>
+        <button type="button" class="shot-placeholder" onclick="openLightbox('./assets/proj-claudia-1.jpg','Claudia — WhatsApp conversation qualifying a prospect, with Calendly CTA')"><img src="./assets/proj-claudia-1.jpg" alt="WhatsApp — Claudia qualifying a prospect" loading="lazy"></button>
+        <button type="button" class="shot-placeholder" onclick="openLightbox('./assets/proj-claudia-2.jpg','Claudia — support conversation, escalates a flagged exam question to the academic team')"><img src="./assets/proj-claudia-2.jpg" alt="WhatsApp — Claudia support escalation" loading="lazy"></button>
       </div>
       <span class="proj-idx">02</span>
       <h3>WhatsApp SDR &amp; Support Agent ("Claudia")</h3>
@@ -666,17 +675,17 @@
     <div class="sec-head"><span class="num">7.0</span><h2>Community</h2></div>
     <div class="community-grid">
       <div>
-        <button type="button" class="photo-pending" onclick="openLightbox(null,'Caribedev.org — community sponsor')">Add photo</button>
+        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-caribedev.jpg','Caribedev.org — community sponsor')"><img src="./assets/community-caribedev.jpg" alt="Caribedev.org community event" loading="lazy"></button>
         <h4>Caribedev.org</h4>
         <p>Community sponsor · 2023–Present</p>
       </div>
       <div>
-        <button type="button" class="photo-pending" onclick="openLightbox(null,'Supabase Community Meetups — host')">Add photo</button>
+        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-supabase.jpg','Supabase Community Meetups — host')"><img src="./assets/community-supabase.jpg" alt="Supabase Community Meetup" loading="lazy"></button>
         <h4>Supabase Community Meetups</h4>
         <p>Host · Bogotá / Barranquilla / Cartagena · 2023–Present</p>
       </div>
       <div>
-        <button type="button" class="photo-pending" onclick="openLightbox(null,'RevenueCat Shipathon — Barranquilla 2025')">Add photo</button>
+        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-shipaton.jpg','RevenueCat Shipathon — Barranquilla 2025')"><img src="./assets/community-shipaton.jpg" alt="RevenueCat Shipathon winner check" loading="lazy"></button>
         <h4>RevenueCat Shipathon</h4>
         <p>Barranquilla · 2025</p>
       </div>
@@ -701,7 +710,7 @@
 <dialog id="project-modal" class="project-modal">
   <div class="modal-image" id="modal-image">
     <button class="modal-close" aria-label="Close" onclick="document.getElementById('project-modal').close()">×</button>
-    <span>Screenshot / demo placeholder</span>
+    <img id="modal-img" alt="" />
   </div>
   <div class="modal-body">
     <p class="modal-eyebrow" id="modal-index"></p>
@@ -731,14 +740,16 @@
       brief:"The command center: lives in #ventas, reads the live pipeline from the CRM, executes commercial tasks on command, and runs the other 8 agents by mention — zero terminal.",
       results:"Add a metric here — e.g., hours of manual CRM admin removed per week.",
       stack:"Claude Code · Anthropic API · Python · Slack Bolt (Socket Mode) · Attio API · GitHub API · DigitalOcean VPS + pm2",
-      link:null, linkLabel:null
+      link:null, linkLabel:null,
+      image:"./assets/proj-sales-orchestrator-1.jpg"
     },
     {
       title:"WhatsApp SDR & Support Agent (\"Claudia\")",
       brief:"Qualifies inbound prospects and answers customer support over WhatsApp, with human-like typing delay, persistent conversation history, and Slack alerts routed by urgency.",
       results:"Add a metric here — e.g., % of inbound leads qualified without human intervention.",
       stack:"Claude Code · Anthropic API · EvolutionAPI / Baileys · Docker · Python · VPS Deployment",
-      link:null, linkLabel:null
+      link:null, linkLabel:null,
+      image:"./assets/proj-claudia-1.jpg"
     }
   ];
 
@@ -749,6 +760,7 @@
     document.getElementById('modal-brief').textContent = p.brief;
     document.getElementById('modal-results').textContent = p.results;
     document.getElementById('modal-stack').textContent = p.stack;
+    document.getElementById('modal-img').src = p.image;
     const actions = document.getElementById('modal-actions');
     actions.innerHTML = p.link
       ? '<a href="'+p.link+'" target="_blank" rel="noopener" class="modal-link">'+p.linkLabel+'</a>'
