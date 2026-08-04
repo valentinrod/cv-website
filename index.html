@@ -65,12 +65,12 @@
   main{
     max-width:var(--maxw);
     margin:0 auto;
-    padding:0 30px 80px;
+    padding:0 30px 50px;
   }
 
   /* HERO */
   .masthead{
-    padding:44px 0 36px;
+    padding:32px 0 26px;
     border-bottom:1px solid var(--rule);
   }
   .masthead-top{
@@ -78,7 +78,7 @@
     grid-template-columns:1fr 152px;
     gap:34px;
     align-items:start;
-    margin-bottom:26px;
+    margin-bottom:20px;
   }
   .doc-label{
     font-family:var(--mono);
@@ -108,8 +108,8 @@
     color:var(--ink);
     background:var(--green-soft);
     border-left:2px solid var(--green);
-    padding:10px 14px;
-    margin:0 0 18px;
+    padding:9px 14px;
+    margin:0 0 14px;
     line-height:1.55;
   }
   .ask-line b{color:var(--green);}
@@ -164,7 +164,7 @@
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:0;
-    padding:30px 0;
+    padding:20px 0;
     border-bottom:1px solid var(--rule);
   }
   .tr-stat{
@@ -193,13 +193,13 @@
   }
 
   /* SECTIONS */
-  section{padding:36px 0;border-bottom:1px solid var(--rule);}
+  section{padding:24px 0;border-bottom:1px solid var(--rule);}
   section:last-of-type{border-bottom:none;}
   .sec-head{
     display:flex;
     align-items:baseline;
     gap:10px;
-    margin-bottom:22px;
+    margin-bottom:16px;
   }
   .sec-head .num{
     font-family:var(--mono);
@@ -214,12 +214,12 @@
     text-transform:uppercase;
     letter-spacing:.03em;
   }
-  .sec-note{font-size:13px;color:var(--ink-faint);margin:-12px 0 20px;max-width:62ch;}
+  .sec-note{font-size:13px;color:var(--ink-faint);margin:-8px 0 14px;max-width:62ch;}
 
   .profile-text p{color:var(--ink-soft);font-size:14.5px;margin:0;max-width:64ch;}
 
   /* ENTRY ROW */
-  .entry-row{padding:20px 0;border-top:1px solid var(--rule);}
+  .entry-row{padding:15px 0;border-top:1px solid var(--rule);}
   section .entry-row:first-of-type{border-top:none;padding-top:0;}
   .entry-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:4px;}
   .entry-row h3{font-size:15.5px;font-weight:700;margin:0;}
@@ -241,13 +241,13 @@
   .entry-row ul li{position:relative;padding-left:16px;margin-bottom:7px;font-size:13.5px;color:var(--ink-soft);}
   .entry-row ul li::before{content:"–";position:absolute;left:0;color:var(--green);}
   .entry-row ul li strong{color:var(--ink);font-weight:600;}
-  .entry-row.compact{padding:16px 0;}
+  .entry-row.compact{padding:11px 0;}
   .entry-row.compact h3{font-size:14.5px;}
   .co-link{font-size:12px;color:var(--ink-faint);text-decoration:none;margin-left:6px;}
   .co-link:hover{color:var(--green);}
 
   /* PROJECTS */
-  .proj-flagship{padding:24px 0;border-top:1px solid var(--rule);}
+  .proj-flagship{padding:17px 0;border-top:1px solid var(--rule);}
   section .proj-flagship:first-of-type{border-top:none;padding-top:0;}
   .proj-idx{
     display:block;
@@ -321,12 +321,12 @@
   }
   .know-more:hover{opacity:.7;}
 
-  .proj-list{margin-top:8px;}
+  .proj-list{margin-top:4px;}
   .proj-list-row{
     display:grid;
     grid-template-columns:20px 1fr;
     gap:14px;
-    padding:13px 0;
+    padding:9px 0;
     border-top:1px solid var(--rule);
   }
   .proj-list-row:first-child{border-top:none;}
@@ -334,24 +334,24 @@
   .proj-list-row h4{font-size:13.5px;font-weight:700;margin:0 0 3px;}
   .proj-list-row p{font-size:13px;color:var(--ink-soft);margin:0 0 5px;max-width:60ch;}
   .proj-list-row .stacklist a{color:var(--green);border-bottom:1px solid var(--green);text-decoration:none;}
-  .proj-list-row.one-line{padding:10px 0;align-items:baseline;}
+  .proj-list-row.one-line{padding:7px 0;align-items:baseline;}
   .proj-list-row.one-line p{margin:0;max-width:64ch;}
   .proj-list-row.one-line p strong{color:var(--ink);font-weight:600;}
   .proj-list-row.one-line p a{color:var(--green);border-bottom:1px solid var(--green);text-decoration:none;}
 
   /* CREDENTIALS / CAPABILITIES */
-  .cred-line{font-size:13.5px;color:var(--ink-soft);padding:12px 0;border-top:1px solid var(--rule);}
+  .cred-line{font-size:13.5px;color:var(--ink-soft);padding:9px 0;border-top:1px solid var(--rule);}
   .cred-line:first-child{border-top:none;padding-top:0;}
   .cred-line strong{color:var(--ink);}
 
-  .label-row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:13px 0;border-top:1px solid var(--rule);}
+  .label-row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:9px 0;border-top:1px solid var(--rule);}
   .label-row:first-child{border-top:none;padding-top:0;}
   .label-row .cat{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--green);padding-top:1px;}
   .label-row .list{font-size:13.5px;color:var(--ink-soft);}
   @media(max-width:560px){ .label-row{grid-template-columns:1fr;gap:4px;} }
 
   .community-line{font-size:13.5px;color:var(--ink-soft);max-width:64ch;}
-  .community-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .community-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   .community-grid h4{font-size:13.5px;font-weight:700;margin:0 0 4px;}
   .community-grid p{font-size:12.5px;color:var(--ink-soft);margin:0;}
   .photo-pending{
@@ -366,13 +366,13 @@
   }
   @media(max-width:600px){ .community-grid{grid-template-columns:1fr;} }
 
-  footer{padding:44px 0 30px;}
-  footer h2{font-weight:700;font-size:clamp(22px,4vw,28px);margin:0 0 12px;}
-  footer .blurb{color:var(--ink-soft);font-size:14.5px;margin:0 0 20px;max-width:50ch;}
-  .colophon{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;}
+  footer{padding:32px 0 22px;}
+  footer h2{font-weight:700;font-size:clamp(22px,4vw,28px);margin:0 0 10px;}
+  footer .blurb{color:var(--ink-soft);font-size:14.5px;margin:0 0 16px;max-width:50ch;}
+  .colophon{display:flex;gap:18px;flex-wrap:wrap;margin-top:20px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;}
   .colophon a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid var(--ink-faint);padding-bottom:2px;}
   .colophon a:hover{color:var(--green);border-color:var(--green);}
-  .fineprint{margin-top:34px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);}
+  .fineprint{margin-top:22px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);}
 
   /* MODAL */
   dialog.project-modal{
@@ -468,6 +468,7 @@
   <span class="brand">VR — Profile</span>
   <span class="links">
     <a href="#companies">Companies</a>
+    <a href="#community">Community</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
@@ -512,7 +513,7 @@
   <section id="profile">
     <div class="sec-head"><span class="num">1.0</span><h2>Profile</h2></div>
     <div class="profile-text">
-      <p>Cofounder with 4+ years leading GTM and Talent Acquisition functions across LATAM and the U.S. — including co-founding a staff augmentation agency that recruited and managed 100+ software professionals for VC-backed companies. Currently cofounding Supertest, an AI-personalized EdTech platform, where I own GTM strategy and commercial execution, lead Talent Acquisition for the team, and use Claude Code to build practical internal tools that support the company's day-to-day sales and operations.</p>
+      <p>Cofounder with 4+ years leading GTM and Talent Acquisition across LATAM and the U.S. — including co-founding a staff augmentation agency that recruited 100+ software professionals for VC-backed companies. Now cofounding Supertest, an AI-personalized EdTech platform, where I own GTM strategy, lead Talent Acquisition, and use Claude Code to build the internal tools that run the team's day-to-day sales and operations.</p>
     </div>
   </section>
 
@@ -525,8 +526,8 @@
       <p class="role-line">Partner — GTM &amp; Talent Acquisition</p>
       <p class="blurb">AI-personalized EdTech platform preparing Colombian students for the Saber 11 and Saber Pro standardized tests, sold B2B to schools and universities. Barranquilla, Colombia.</p>
       <ul>
-        <li>Owns product vision, GTM strategy, and B2B commercial relationships (rectors, vicerrectores, deans) for the Costa Caribe region, and leads Talent Acquisition for the team.</li>
-        <li>Uses <strong>Claude Code</strong> to build and maintain a set of internal tools that support the sales and operations workflow — a Slack-based sales assistant, a WhatsApp inbound/support agent, a cold-outreach sequencer, a pre-meeting research agent, a call-reviewer, a proposal generator, and a newsletter tool — integrated with Attio CRM, Slack, GitHub, Fireflies, and Linear.</li>
+        <li>Owns GTM strategy and B2B relationships (rectors, vicerrectores, deans) across the Costa Caribe region; leads Talent Acquisition for the team.</li>
+        <li>Uses <strong>Claude Code</strong> to build the internal tools — a Slack sales assistant, a WhatsApp support agent, a cold-outreach sequencer, and more — that run the team's day-to-day sales and ops.</li>
       </ul>
     </div>
 
@@ -536,9 +537,9 @@
       <p class="role-line">Co-Founder | Talent Acquisition</p>
       <p class="blurb">LATAM-focused staff augmentation and recruiting agency serving U.S. and European tech companies.</p>
       <ul>
-        <li>Led the company to a successful exit, <strong>acquired by another recruiting agency in June 2026</strong> after 4+ years scaling the business.</li>
-        <li>Recruited and managed <strong>100+ software engineers, data professionals, and technical roles</strong> across LATAM; led end-to-end talent acquisition, people operations, and organizational design for fully remote teams.</li>
-        <li>Introduced automation and AI-driven workflows to streamline recruiting, candidate screening, and internal processes.</li>
+        <li>Led the company to a successful exit — <strong>acquired by another recruiting agency in June 2026</strong> after 4+ years scaling the business.</li>
+        <li>Recruited and managed <strong>100+ engineers and technical roles</strong> across LATAM; ran end-to-end talent acquisition and people operations for fully remote teams.</li>
+        <li>Introduced AI-driven workflows to streamline recruiting, screening, and internal processes.</li>
       </ul>
     </div>
 
@@ -548,8 +549,8 @@
       <p class="role-line">Co-Founder, GTM</p>
       <p class="blurb">Consumer app devshop shipping mobile apps for the U.S. App Store market.</p>
       <ul>
-        <li>Shipped and grew a 4-app consumer portfolio — <strong>MacroMax</strong> (AI calorie tracker), <strong>DogDogScan</strong> (AI dog breed ID + skin scanner), an image-to-anime line, and an AI image generator — to <strong>1,000+ downloads</strong> and <strong>~$3K MRR</strong> combined.</li>
-        <li>Growth ran below the threshold that justified the capital and attention required to keep scaling it — redirected both into Supertest in 2026 as the higher-leverage bet.</li>
+        <li>Shipped a 4-app consumer portfolio — <strong>MacroMax</strong> (calorie tracker), <strong>DogDogScan</strong> (dog breed ID), an image-to-anime line, and an AI image generator — to <strong>1,000+ downloads</strong> and <strong>~$3K MRR</strong> combined.</li>
+        <li>Growth didn't justify further capital and attention — redirected effort into Supertest in 2026 as the higher-leverage bet.</li>
       </ul>
     </div>
 
@@ -565,9 +566,30 @@
     </div>
   </section>
 
+  <section id="community">
+    <div class="sec-head"><span class="num">3.0</span><h2>Community</h2></div>
+    <div class="community-grid">
+      <div>
+        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-caribedev.jpg','Caribedev.org — community sponsor')"><img src="./assets/community-caribedev.jpg" alt="Caribedev.org community event" loading="lazy"></button>
+        <h4>Caribedev.org</h4>
+        <p>Community sponsor · 2023–Present</p>
+      </div>
+      <div>
+        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-supabase.jpg','Supabase Community Meetups — host')"><img src="./assets/community-supabase.jpg" alt="Supabase Community Meetup" loading="lazy"></button>
+        <h4>Supabase Community Meetups</h4>
+        <p>Host · Bogotá / Barranquilla / Cartagena · 2023–Present</p>
+      </div>
+      <div>
+        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-shipaton.jpg','RevenueCat Shipathon — Barranquilla 2025')"><img src="./assets/community-shipaton.jpg" alt="RevenueCat Shipathon winner check" loading="lazy"></button>
+        <h4>RevenueCat Shipathon</h4>
+        <p>Barranquilla · 2025</p>
+      </div>
+    </div>
+  </section>
+
   <section id="projects">
-    <div class="sec-head"><span class="num">3.0</span><h2>Projects Built with Claude Code</h2></div>
-    <p class="sec-note">A set of internal tools built solo for Supertest with Claude Code, not from a software background — supporting the company's GTM motion. Two examples below; the rest follows.</p>
+    <div class="sec-head"><span class="num">4.0</span><h2>Projects Built with Claude Code</h2></div>
+    <p class="sec-note">Internal tools built solo for Supertest with Claude Code — supporting its GTM motion. Two flagship examples below; the rest in brief.</p>
 
     <div class="proj-flagship">
       <div class="shot-grid">
@@ -588,7 +610,7 @@
       </div>
       <span class="proj-idx">02</span>
       <h3>WhatsApp SDR &amp; Support Agent ("Claudia")</h3>
-      <p class="blurb">Qualifies inbound prospects and answers customer support over WhatsApp, with human-like typing delay, persistent conversation history, and Slack alerts routed by urgency.</p>
+      <p class="blurb">Qualifies inbound prospects and answers customer support over WhatsApp, with human-like typing delay and urgency-routed Slack alerts.</p>
       <p class="stacklist">Claude Code · Anthropic API · EvolutionAPI / Baileys · Docker · Python · VPS Deployment</p>
       <button class="know-more" onclick="openProject(1)">Know more →</button>
     </div>
@@ -622,19 +644,19 @@
   </section>
 
   <section id="experience">
-    <div class="sec-head"><span class="num">4.0</span><h2>Earlier Career</h2></div>
+    <div class="sec-head"><span class="num">5.0</span><h2>Earlier Career</h2></div>
     <p class="sec-note">Pre-founder roles, before moving into GTM &amp; Talent Acquisition full-time.</p>
 
     <div class="entry-row compact">
       <div class="entry-top"><h3>Customer Experience Lead</h3><span class="dates">Nov 2021 — Mar 2022</span></div>
       <p class="role-line">Farmu · Barranquilla, Colombia — VC-backed online drugstore marketplace</p>
-      <p class="blurb">Built the Customer Experience function from scratch — hiring, CRM/support tooling, KPIs — and set up feedback loops across Support, Ops, Sales, and Product.</p>
+      <p class="blurb">Built the Customer Experience function from scratch — hiring, CRM/support tooling, KPIs, cross-team feedback loops.</p>
     </div>
 
     <div class="entry-row compact">
       <div class="entry-top"><h3>Settlements Coordinator</h3><span class="dates">Jun 2020 — Oct 2021</span></div>
       <p class="role-line">Lean Solutions Group · Barranquilla, Colombia</p>
-      <p class="blurb">Led contractor settlements across two U.S. logistics terminals — rate validation and controls covering 200+ monthly contractor payments.</p>
+      <p class="blurb">Led contractor settlements across two U.S. logistics terminals — rate validation covering 200+ monthly payments.</p>
     </div>
 
     <div class="entry-row compact">
@@ -645,14 +667,14 @@
   </section>
 
   <section id="credentials">
-    <div class="sec-head"><span class="num">5.0</span><h2>Credentials</h2></div>
+    <div class="sec-head"><span class="num">6.0</span><h2>Credentials</h2></div>
     <p class="cred-line"><strong>Universidad del Norte</strong> — BA, Business Administration · Barranquilla, Colombia (2012–2017)</p>
     <p class="cred-line"><strong>Valencia College</strong> — HR Management Certificate · Orlando, FL (2014)</p>
     <p class="cred-line"><strong>Endeavor Accelerator</strong> — Dream Bigger Program (2024)</p>
   </section>
 
   <section id="capabilities">
-    <div class="sec-head"><span class="num">6.0</span><h2>Capabilities</h2></div>
+    <div class="sec-head"><span class="num">7.0</span><h2>Capabilities</h2></div>
     <div class="label-row">
       <div class="cat">People &amp; Talent</div>
       <div class="list">Talent Acquisition · Technical Recruiting · People Operations · Performance Frameworks · Staff Augmentation · Stakeholder Management</div>
@@ -668,27 +690,6 @@
     <div class="label-row">
       <div class="cat">Languages</div>
       <div class="list">Spanish (Native) · English (Professional / Fluent)</div>
-    </div>
-  </section>
-
-  <section id="community">
-    <div class="sec-head"><span class="num">7.0</span><h2>Community</h2></div>
-    <div class="community-grid">
-      <div>
-        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-caribedev.jpg','Caribedev.org — community sponsor')"><img src="./assets/community-caribedev.jpg" alt="Caribedev.org community event" loading="lazy"></button>
-        <h4>Caribedev.org</h4>
-        <p>Community sponsor · 2023–Present</p>
-      </div>
-      <div>
-        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-supabase.jpg','Supabase Community Meetups — host')"><img src="./assets/community-supabase.jpg" alt="Supabase Community Meetup" loading="lazy"></button>
-        <h4>Supabase Community Meetups</h4>
-        <p>Host · Bogotá / Barranquilla / Cartagena · 2023–Present</p>
-      </div>
-      <div>
-        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-shipaton.jpg','RevenueCat Shipathon — Barranquilla 2025')"><img src="./assets/community-shipaton.jpg" alt="RevenueCat Shipathon winner check" loading="lazy"></button>
-        <h4>RevenueCat Shipathon</h4>
-        <p>Barranquilla · 2025</p>
-      </div>
     </div>
   </section>
 
