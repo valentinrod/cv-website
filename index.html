@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Valentín Rodríguez — Head of People, Talent Acquisition &amp; EdTech Cofounder</title>
-<meta name="description" content="Valentín Rodríguez — Cofounder at Supertest (EdTech). Head of People &amp; Talent Acquisition leadership for tech and EdTech startups." />
+<title>Valentín Rodríguez — GTM &amp; Talent Acquisition Leadership | EdTech Cofounder</title>
+<meta name="description" content="Valentín Rodríguez — Cofounder at Supertest (EdTech). GTM and Talent Acquisition leadership for EdTech &amp; Talent startups." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -334,6 +334,10 @@
   .proj-list-row h4{font-size:13.5px;font-weight:700;margin:0 0 3px;}
   .proj-list-row p{font-size:13px;color:var(--ink-soft);margin:0 0 5px;max-width:60ch;}
   .proj-list-row .stacklist a{color:var(--green);border-bottom:1px solid var(--green);text-decoration:none;}
+  .proj-list-row.one-line{padding:10px 0;align-items:baseline;}
+  .proj-list-row.one-line p{margin:0;max-width:64ch;}
+  .proj-list-row.one-line p strong{color:var(--ink);font-weight:600;}
+  .proj-list-row.one-line p a{color:var(--green);border-bottom:1px solid var(--green);text-decoration:none;}
 
   /* CREDENTIALS / CAPABILITIES */
   .cred-line{font-size:13.5px;color:var(--ink-soft);padding:12px 0;border-top:1px solid var(--rule);}
@@ -433,6 +437,29 @@
     font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.04em;
   }
   .lightbox-caption{padding:13px 18px;font-size:13px;color:var(--ink-soft);margin:0;border-top:1px solid var(--rule);font-family:var(--mono);}
+
+  /* PRINT / PDF */
+  @media print{
+    @page{ size:letter; margin:0.45in 0.5in; }
+    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    nav, .btn-row, .know-more, .shot-placeholder::after, .photo-pending::after{ display:none !important; }
+    body{ font-size:12px; }
+    main{ padding:0; max-width:none; }
+    .masthead{ padding-top:0; }
+    section{ padding:12px 0; }
+    .sec-head{ break-after:avoid; margin-bottom:14px; }
+    .entry-row{ padding:12px 0; }
+    .entry-row.compact{ padding:9px 0; }
+    .cred-line, .label-row{ padding:8px 0; }
+    .entry-row, .proj-flagship, .proj-list-row, .cred-line, .label-row{ break-inside:avoid; }
+    .shot-grid{ display:none; }
+    .community-grid .photo-pending{ display:none; }
+    dialog{ display:none !important; }
+    footer{ padding:12px 0 0; }
+    footer .blurb{ margin-bottom:12px; }
+    .btn-primary{ break-inside:avoid; }
+    .colophon, .fineprint{ display:none; }
+  }
 </style>
 </head>
 <body>
@@ -454,13 +481,13 @@
       <div>
         <p class="doc-label">Field Brief — Curriculum Vitae</p>
         <h1>Valentín Rodríguez</h1>
-        <p class="role">Cofounder — Head of People, Talent Acquisition &amp; EdTech.</p>
+        <p class="role">Cofounder — GTM &amp; Talent Acquisition Leadership, EdTech.</p>
       </div>
       <div class="photo-frame">
         <img src="./assets/valentin-profile-portrait.jpeg" alt="Valentín Rodríguez" />
       </div>
     </div>
-    <p class="ask-line"><b>Open to:</b> Head of People roles · Talent Acquisition Leadership roles · Cofounder opportunities — at EdTech &amp; tech startups.</p>
+    <p class="ask-line"><b>Open to:</b> GTM Leadership roles · Talent Acquisition Leadership roles — at EdTech &amp; Talent Startups.</p>
     <ul class="meta-list">
       <li><a href="https://www.linkedin.com/in/valenrodriguez/" target="_blank" rel="noopener">LinkedIn</a></li>
       <li><a href="https://github.com/valentinrod" target="_blank" rel="noopener">GitHub</a></li>
@@ -477,15 +504,15 @@
 
   <div class="track-record">
     <div class="tr-stat"><span class="num">100+</span><span class="label">tech professionals recruited &amp; placed</span></div>
-    <div class="tr-stat"><span class="num">7+</span><span class="label">years leading People &amp; Talent Acquisition functions</span></div>
+    <div class="tr-stat"><span class="num">4+</span><span class="label">years leading GTM &amp; Talent Acquisition functions</span></div>
     <div class="tr-stat"><span class="num">4</span><span class="label">companies co-founded since 2019</span></div>
-    <div class="tr-stat"><span class="num">9</span><span class="label">AI systems built for Supertest's growth &amp; ops motion</span></div>
+    <div class="tr-stat"><span class="num">9</span><span class="label">internal tools built to support Supertest's GTM motion</span></div>
   </div>
 
   <section id="profile">
     <div class="sec-head"><span class="num">1.0</span><h2>Profile</h2></div>
     <div class="profile-text">
-      <p>Cofounder and Head of People &amp; Talent Acquisition operator with 7+ years building People, Talent, and Operations functions across LATAM and the U.S. — including co-founding a staff augmentation agency that recruited and managed 100+ software professionals for VC-backed companies. Currently cofounding Supertest, an AI-personalized EdTech platform, where I lead People &amp; Talent Acquisition and commercial strategy, and personally build — with Claude Code as my engineering team — the AI systems that run the company's growth and operations end to end.</p>
+      <p>Cofounder with 4+ years leading GTM and Talent Acquisition functions across LATAM and the U.S. — including co-founding a staff augmentation agency that recruited and managed 100+ software professionals for VC-backed companies. Currently cofounding Supertest, an AI-personalized EdTech platform, where I own GTM strategy and commercial execution, lead Talent Acquisition for the team, and use Claude Code to build practical internal tools that support the company's day-to-day sales and operations.</p>
     </div>
   </section>
 
@@ -495,19 +522,18 @@
     <div class="entry-row">
       <div class="entry-top"><h3>Supertest <a class="co-link" href="https://supertest.co" target="_blank" rel="noopener">↗ supertest.co</a></h3><span class="dates">Jan 2026 — Present</span></div>
       <span class="status-tag">Active — Scaling</span>
-      <p class="role-line">Partner — People &amp; Talent Acquisition, Commercial Strategy</p>
+      <p class="role-line">Partner — GTM &amp; Talent Acquisition</p>
       <p class="blurb">AI-personalized EdTech platform preparing Colombian students for the Saber 11 and Saber Pro standardized tests, sold B2B to schools and universities. Barranquilla, Colombia.</p>
       <ul>
-        <li>Leads People &amp; Talent Acquisition for the team, and owns product vision, B2B sales (rectors, vicerrectores, deans), and commercial strategy for the Costa Caribe region.</li>
-        <li>Designed and built, personally, with <strong>Claude Code</strong>, a 9-project growth &amp; operations automation portfolio that runs the company's commercial and internal workflows: an internal Slack sales orchestrator, an AI WhatsApp SDR/support agent, a cold-outreach engine, a pre-meeting research agent, a call-reviewer that writes CRM notes and tasks, a proposal generator, and a newsletter agent.</li>
-        <li>Acts as the company's own growth &amp; ops engineer — integrating the Anthropic API, Attio CRM, Slack, GitHub, Fireflies, Linear, and Make.com into one operating system for a founder-led operation, running 24/7 on a self-managed VPS.</li>
+        <li>Owns product vision, GTM strategy, and B2B commercial relationships (rectors, vicerrectores, deans) for the Costa Caribe region, and leads Talent Acquisition for the team.</li>
+        <li>Uses <strong>Claude Code</strong> to build and maintain a set of internal tools that support the sales and operations workflow — a Slack-based sales assistant, a WhatsApp inbound/support agent, a cold-outreach sequencer, a pre-meeting research agent, a call-reviewer, a proposal generator, and a newsletter tool — integrated with Attio CRM, Slack, GitHub, Fireflies, and Linear.</li>
       </ul>
     </div>
 
     <div class="entry-row compact">
       <div class="entry-top"><h3>Avvy Talent <a class="co-link" href="https://avvy.co" target="_blank" rel="noopener">↗ avvy.co</a></h3><span class="dates">Jan 2022 — Jun 2026</span></div>
       <span class="status-tag">Exited — Acquired Jun 2026</span>
-      <p class="role-line">Co-Founder | Head of People &amp; Talent Acquisition</p>
+      <p class="role-line">Co-Founder | Talent Acquisition</p>
       <p class="blurb">LATAM-focused staff augmentation and recruiting agency serving U.S. and European tech companies.</p>
       <ul>
         <li>Led the company to a successful exit, <strong>acquired by another recruiting agency in June 2026</strong> after 4+ years scaling the business.</li>
@@ -519,7 +545,7 @@
     <div class="entry-row compact">
       <div class="entry-top"><h3>MondayLoop</h3><span class="dates">Jan 2025 — Aug 2025</span></div>
       <span class="status-tag">Reallocated to Supertest</span>
-      <p class="role-line">Co-Founder, Growth</p>
+      <p class="role-line">Co-Founder, GTM</p>
       <p class="blurb">Consumer app devshop shipping mobile apps for the U.S. App Store market.</p>
       <ul>
         <li>Shipped and grew a 4-app consumer portfolio — <strong>MacroMax</strong> (AI calorie tracker), <strong>DogDogScan</strong> (AI dog breed ID + skin scanner), an image-to-anime line, and an AI image generator — to <strong>1,000+ downloads</strong> and <strong>~$3K MRR</strong> combined.</li>
@@ -541,7 +567,7 @@
 
   <section id="projects">
     <div class="sec-head"><span class="num">3.0</span><h2>Projects Built with Claude Code</h2></div>
-    <p class="sec-note">A 9-project growth &amp; operations automation portfolio built solo for Supertest, not from a software background. Two flagship systems below; the rest of the portfolio follows.</p>
+    <p class="sec-note">A set of internal tools built solo for Supertest with Claude Code, not from a software background — supporting the company's GTM motion. Two examples below; the rest follows.</p>
 
     <div class="proj-flagship">
       <div class="shot-grid">
@@ -568,87 +594,53 @@
     </div>
 
     <div class="proj-list">
-      <div class="proj-list-row">
+      <div class="proj-list-row one-line">
         <span class="idx">03</span>
-        <div>
-          <h4>Cold Outreach Sequencer</h4>
-          <p>Turns a CSV of target institutions into a researched, personalized multi-touch email + WhatsApp sequence, with auto stop-on-reply and CRM sync.</p>
-          <p class="stacklist">Claude Code · Anthropic API · Exa.ai · Gmail SMTP/IMAP · Attio API · Python</p>
-        </div>
+        <p><strong>Cold Outreach Sequencer</strong> — turns a CSV of target institutions into a personalized multi-touch email + WhatsApp sequence, with auto stop-on-reply and CRM sync.</p>
       </div>
-      <div class="proj-list-row">
+      <div class="proj-list-row one-line">
         <span class="idx">04</span>
-        <div>
-          <h4>Pre-Meeting Research Agent</h4>
-          <p>Given an institution's name, generates a PDF brief with results, comparatives, and decision-makers — delivered to Slack in ~2 minutes, before every call.</p>
-          <p class="stacklist">Claude Code · Anthropic API · Exa.ai · Python</p>
-        </div>
+        <p><strong>Pre-Meeting Research Agent</strong> — generates a PDF research brief on an institution, delivered to Slack in ~2 minutes before every call.</p>
       </div>
-      <div class="proj-list-row">
+      <div class="proj-list-row one-line">
         <span class="idx">05</span>
-        <div>
-          <h4>Call Reviewer</h4>
-          <p>Pulls the latest sales call transcript, opens follow-up tasks in Linear, and writes a CRM note with a suggested deal stage — confirmed by a human, never auto-moved.</p>
-          <p class="stacklist">Claude Code · Anthropic API (Sonnet) · Fireflies.ai GraphQL · Linear API · Attio API</p>
-        </div>
+        <p><strong>Call Reviewer</strong> — pulls the latest sales call transcript, opens follow-up tasks in Linear, and drafts a CRM note with a suggested deal stage.</p>
       </div>
-      <div class="proj-list-row">
+      <div class="proj-list-row one-line">
         <span class="idx">06</span>
-        <div>
-          <h4>Internal Wiki with Natural-Language Editing</h4>
-          <p>A 22-page company wiki the Slack agent can update and redeploy on command. <a href="https://supertest-wiki.vercel.app" target="_blank" rel="noopener">View live →</a></p>
-          <p class="stacklist">Claude Code · MkDocs Material · GitHub API · Vercel · Anthropic API</p>
-        </div>
+        <p><strong>Internal Wiki with Natural-Language Editing</strong> — a 22-page company wiki the Slack agent can update and redeploy on command. <a href="https://supertest-wiki.vercel.app" target="_blank" rel="noopener">View live →</a></p>
       </div>
-      <div class="proj-list-row">
+      <div class="proj-list-row one-line">
         <span class="idx">07</span>
-        <div>
-          <h4>This Website</h4>
-          <p>This CV site itself — built end to end with Claude Code. <a href="https://github.com/valentinrod/cv-website" target="_blank" rel="noopener">View repo →</a></p>
-          <p class="stacklist">Claude Code · HTML / CSS · Python (image processing)</p>
-        </div>
+        <p><strong>This Website</strong> — this CV site itself, built end to end with Claude Code. <a href="https://github.com/valentinrod/cv-website" target="_blank" rel="noopener">View repo →</a></p>
       </div>
-      <div class="proj-list-row">
+      <div class="proj-list-row one-line">
         <span class="idx">08</span>
-        <div>
-          <h4>Pomo</h4>
-          <p>A minimal, retro pomodoro timer with a drag-and-drop kanban board — a personal side project, built solo end to end. <a href="https://pomo.valentinrod.com" target="_blank" rel="noopener">View live →</a> · <a href="https://github.com/valentinrod/pomo" target="_blank" rel="noopener">View repo →</a></p>
-          <p class="stacklist">Claude Code · Next.js · TypeScript · Tailwind CSS · @dnd-kit · Vercel</p>
-        </div>
+        <p><strong>Pomo</strong> — a minimal, retro pomodoro timer with a drag-and-drop kanban board, a personal side project. <a href="https://pomo.valentinrod.com" target="_blank" rel="noopener">View live →</a> · <a href="https://github.com/valentinrod/pomo" target="_blank" rel="noopener">View repo →</a></p>
       </div>
     </div>
   </section>
 
   <section id="experience">
-    <div class="sec-head"><span class="num">4.0</span><h2>Work Experience</h2></div>
+    <div class="sec-head"><span class="num">4.0</span><h2>Earlier Career</h2></div>
+    <p class="sec-note">Pre-founder roles, before moving into GTM &amp; Talent Acquisition full-time.</p>
 
-    <div class="entry-row">
+    <div class="entry-row compact">
       <div class="entry-top"><h3>Customer Experience Lead</h3><span class="dates">Nov 2021 — Mar 2022</span></div>
       <p class="role-line">Farmu · Barranquilla, Colombia — VC-backed online drugstore marketplace</p>
-      <ul>
-        <li>Built and scaled the <strong>Customer Experience function from scratch</strong>, including team hiring and training.</li>
-        <li>Implemented CRM systems, support tools, and performance KPIs.</li>
-        <li>Established feedback loops between Customer Support, Operations, Sales, and Product teams.</li>
-      </ul>
+      <p class="blurb">Built the Customer Experience function from scratch — hiring, CRM/support tooling, KPIs — and set up feedback loops across Support, Ops, Sales, and Product.</p>
     </div>
 
-    <div class="entry-row">
+    <div class="entry-row compact">
       <div class="entry-top"><h3>Settlements Coordinator</h3><span class="dates">Jun 2020 — Oct 2021</span></div>
       <p class="role-line">Lean Solutions Group · Barranquilla, Colombia</p>
-      <ul>
-        <li>Led contractor settlement operations across <strong>two U.S. logistics terminals</strong>.</li>
-        <li>Implemented rate validation and control processes to prevent payment discrepancies and delays.</li>
-        <li>Supported management with actionable insights to improve accuracy and efficiency across <strong>200+ monthly contractor payments</strong>.</li>
-      </ul>
+      <p class="blurb">Led contractor settlements across two U.S. logistics terminals — rate validation and controls covering 200+ monthly contractor payments.</p>
     </div>
 
-    <div class="entry-row">
+    <div class="entry-row compact">
       <div class="entry-top"><h3>Commercial Credit Analyst</h3><span class="dates">Mar 2018 — Mar 2019</span></div>
       <p class="role-line">Banco Serfinanza · Barranquilla, Colombia</p>
-      <ul>
-        <li>Analyzed corporate clients' financial statements, credit history, and KPIs.</li>
-        <li>Supported credit approval decisions through risk assessment and financial modeling.</li>
-      </ul>
+      <p class="blurb">Analyzed corporate financials and credit history to support lending decisions.</p>
     </div>
   </section>
 
@@ -666,12 +658,12 @@
       <div class="list">Talent Acquisition · Technical Recruiting · People Operations · Performance Frameworks · Staff Augmentation · Stakeholder Management</div>
     </div>
     <div class="label-row">
-      <div class="cat">AI &amp; Automation</div>
-      <div class="list">Claude Code · Anthropic API (Sonnet / Haiku) · Python Automation · Slack API (Bolt) · GitHub API · Attio CRM API · Make.com · Vercel · VPS Deployment (Docker / pm2)</div>
+      <div class="cat">GTM</div>
+      <div class="list">Lead Generation · Outbound Sequencing · CRM Automation · 1:1 Closing · GTM Strategy · Negotiation · Pipeline Management · Process Optimization</div>
     </div>
     <div class="label-row">
-      <div class="cat">Growth</div>
-      <div class="list">Lead Generation · Outbound Sequencing · CRM Automation · 1:1 Closing · Growth Strategy · Negotiation · Pipeline Management · Process Optimization</div>
+      <div class="cat">Tools &amp; Systems</div>
+      <div class="list">Claude Code · Anthropic API (Sonnet / Haiku) · Python Automation · Slack API (Bolt) · GitHub API · Attio CRM API · Make.com · Vercel · VPS Deployment (Docker / pm2)</div>
     </div>
     <div class="label-row">
       <div class="cat">Languages</div>
@@ -703,7 +695,7 @@
   <footer id="contact">
     <div class="sec-head"><span class="num">8.0</span><h2>Contact</h2></div>
     <h2>Let's build something.</h2>
-    <p class="blurb">Open to Head of People, Talent Acquisition, and Cofounder opportunities — at EdTech &amp; tech startups.</p>
+    <p class="blurb">Open to GTM and Talent Acquisition Leadership roles — at EdTech &amp; Talent Startups.</p>
     <a class="btn btn-primary" href="mailto:valentin.rj@hotmail.com">valentin.rj@hotmail.com</a>
     <div class="colophon">
       <a href="#top">Back to top</a>
