@@ -3,856 +3,401 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Valentín Rodríguez — Customer Success &amp; Operations | EdTech Cofounder</title>
-<meta name="description" content="Valentín Rodríguez — Cofounder at Supertest (EdTech). Open to Customer Success and Operations roles." />
+<title>Valentín Rodríguez — Customer Success &amp; Client Operations</title>
+<meta name="description" content="Valentín Rodríguez — Cofounder at Supertest (EdTech). Open to Customer Success and Client Operations roles." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#fafaf8;
-    --ink:#15171a;
-    --ink-soft:#52565d;
-    --ink-faint:#8b8f96;
-    --rule:#d8d9dc;
-    --green:#1f5c3f;
-    --green-soft:rgba(31,92,63,.07);
-    --sans:'Public Sans', -apple-system, sans-serif;
-    --mono:'IBM Plex Mono', 'SF Mono', monospace;
-    --maxw:760px;
+    --bg:#f6f4ee; --bg-2:#efece3; --card:#ffffff; --ink:#14181a; --ink-2:#4a5156; --ink-3:#8a9095;
+    --line:rgba(20,24,26,.10); --accent:#1f6f4a; --accent-2:#2f9e6a; --accent-soft:rgba(31,111,74,.10);
+    --frame:#e8e4d9; --shadow:0 1px 2px rgba(20,24,26,.05),0 12px 40px -12px rgba(20,24,26,.18);
+    --serif:'Instrument Serif',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+    --r:22px;
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--sans);
-    font-size:15px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+  :root[data-theme=dark]{
+    --bg:#0d1110; --bg-2:#131917; --card:#161c1a; --ink:#eef1ee; --ink-2:#a9b2ad; --ink-3:#6f7873;
+    --line:rgba(238,241,238,.10); --accent:#4cc98c; --accent-2:#7be0ae; --accent-soft:rgba(76,201,140,.12);
+    --frame:#1b2220; --shadow:0 1px 2px rgba(0,0,0,.4),0 20px 60px -20px rgba(0,0,0,.7);
   }
-  a{color:inherit;}
-  ::selection{background:var(--green);color:#fff;}
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--accent);color:#fff}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  .mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+  .serif{font-family:var(--serif);font-weight:400;letter-spacing:-.02em}
 
-  nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:20px 30px;
-    border-bottom:1px solid var(--rule);
-    position:sticky;
-    top:0;
-    background:var(--paper);
-    z-index:20;
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-  }
-  nav .brand{color:var(--ink-soft);}
-  nav .links a{
-    margin-left:22px;
-    color:var(--ink-soft);
-    text-decoration:none;
-  }
-  nav .links a:hover{color:var(--green);}
-  nav .links{display:none;}
-  @media(min-width:640px){ nav .links{display:block;} }
+  /* floating nav */
+  .nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:6px;
+    padding:6px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--bg) 78%,transparent);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow)}
+  .nav a,.nav button{font:500 13px var(--sans);color:var(--ink-2);padding:8px 14px;border-radius:999px;border:0;background:none;cursor:pointer;transition:.2s}
+  .nav a:hover,.nav button:hover{background:var(--accent-soft);color:var(--ink)}
+  .nav .cta{background:var(--ink);color:var(--bg)}
+  .nav .cta:hover{background:var(--accent);color:#fff}
+  @media(max-width:720px){.nav a:not(.cta){display:none}}
 
-  main{
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:0 30px 50px;
-  }
+  /* hero */
+  .hero{padding:140px 0 56px;position:relative}
+  .hero::before{content:"";position:absolute;inset:-10% -20% auto auto;width:640px;height:640px;border-radius:50%;
+    background:radial-gradient(closest-side,var(--accent-soft),transparent);z-index:-1;filter:blur(10px)}
+  .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:13px;color:var(--ink-2)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 0 var(--accent-2);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9vw,128px);line-height:.92;letter-spacing:-.035em;margin:22px 0 22px}
+  h1 em{font-style:italic;color:var(--accent)}
+  .lede{font-size:clamp(18px,2vw,22px);color:var(--ink-2);max-width:34em;line-height:1.5}
+  .lede b{color:var(--ink);font-weight:600}
+  .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font:600 15px var(--sans);transition:.2s;border:1px solid var(--line)}
+  .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px -8px var(--accent)}
+  .btn.ghost:hover{background:var(--card);transform:translateY(-2px)}
+  .portrait{position:relative}
+  .portrait .arch{border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);background:var(--frame)}
+  .portrait img{width:100%;height:100%;object-fit:cover}
+  .chip{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:16px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);font-size:13px;font-weight:500;animation:float 6s ease-in-out infinite}
+  .chip i{font-style:normal;font-size:18px}
+  .chip.a{left:-34px;bottom:20%}
+  .chip.b{right:-18px;top:14%;animation-delay:-3s}
+  @keyframes float{50%{transform:translateY(-8px)}}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.portrait{max-width:340px}.chip.a{left:-8px}.chip.b{right:-8px}}
 
-  /* HERO */
-  .masthead{
-    padding:32px 0 26px;
-    border-bottom:1px solid var(--rule);
-  }
-  .masthead-top{
-    display:grid;
-    grid-template-columns:1fr 152px;
-    gap:34px;
-    align-items:start;
-    margin-bottom:20px;
-  }
-  .doc-label{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    color:var(--green);
-    margin:0 0 16px;
-    font-weight:600;
-  }
-  .masthead h1{
-    font-weight:700;
-    font-size:clamp(28px,4.5vw,38px);
-    line-height:1.15;
-    letter-spacing:-.01em;
-    margin:0 0 10px;
-  }
-  .masthead .role{
-    font-size:15px;
-    color:var(--ink-soft);
-    margin:0 0 10px;
-    max-width:48ch;
-  }
-  .hero-teaser{
-    font-size:13px;
-    color:var(--ink-soft);
-    margin:0 0 18px;
-    max-width:48ch;
-  }
-  .hero-teaser a{color:var(--green);border-bottom:1px solid var(--green);text-decoration:none;}
-  .hero-teaser a:hover{opacity:.75;}
-  .ask-line{
-    font-family:var(--mono);
-    font-size:12.5px;
-    color:var(--ink);
-    background:var(--green-soft);
-    border-left:2px solid var(--green);
-    padding:9px 14px;
-    margin:0 0 14px;
-    line-height:1.55;
-  }
-  .ask-line b{color:var(--green);}
-  .meta-list{
-    list-style:none;
-    margin:0 0 4px;
-    padding:0;
-    display:flex;
-    flex-wrap:wrap;
-    gap:4px 0;
-    font-size:13px;
-    color:var(--ink-soft);
-  }
-  .meta-list li:not(:last-child)::after{content:"  |  ";color:var(--ink-faint);}
-  .meta-list a{text-decoration:none;border-bottom:1px solid var(--ink-faint);}
-  .meta-list a:hover{color:var(--green);border-color:var(--green);}
-  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
-  .btn{
-    display:inline-block;
-    font-family:var(--mono);
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:.04em;
-    text-decoration:none;
-    padding:9px 16px;
-    border:1px solid var(--ink);
-  }
-  .btn-primary{background:var(--ink);color:var(--paper);}
-  .btn-primary:hover{background:var(--green);border-color:var(--green);}
-  .btn-ghost{color:var(--ink);}
-  .btn-ghost:hover{color:var(--green);border-color:var(--green);}
-  .photo-frame{
-    width:152px;height:152px;
-    border:1px solid var(--ink);
-    border-radius:50%;
-    overflow:hidden;
-  }
-  .photo-frame img{
-    width:100%;height:100%;
-    object-fit:cover;
-    object-position:center 22%;
-    filter:contrast(1.04) saturate(1.1) brightness(1.02);
-    display:block;
-  }
-  @media(max-width:560px){
-    .masthead-top{grid-template-columns:1fr;}
-    .photo-frame{order:-1;width:120px;height:120px;margin-bottom:6px;}
-  }
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:64px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;transition:.25s}
+  .stat:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .stat .n{font-family:var(--serif);font-size:64px;line-height:1;letter-spacing:-.03em}
+  .stat .n small{font-size:.55em;color:var(--accent)}
+  .stat p{margin-top:10px;font-size:14px;color:var(--ink-2);line-height:1.4}
+  @media(max-width:860px){.stats{grid-template-columns:1fr 1fr}}
 
-  /* TRACK RECORD */
-  .track-record{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:0;
-    padding:20px 0;
-    border-bottom:1px solid var(--rule);
-  }
-  .tr-stat{
-    padding:0 18px;
-    border-left:1px solid var(--rule);
-  }
-  .tr-stat:first-child{border-left:none;padding-left:0;}
-  .tr-stat .num{
-    font-family:var(--mono);
-    font-weight:600;
-    font-size:clamp(22px,3.5vw,30px);
-    color:var(--green);
-    display:block;
-    margin-bottom:6px;
-    letter-spacing:-.01em;
-  }
-  .tr-stat .label{font-size:12px;color:var(--ink-soft);line-height:1.4;}
-  @media(max-width:640px){
-    .track-record{grid-template-columns:1fr 1fr;row-gap:20px;}
-    .tr-stat:nth-child(3){border-left:none;padding-left:0;}
-  }
-  @media(max-width:420px){
-    .track-record{grid-template-columns:1fr;}
-    .tr-stat{border-left:none;padding-left:0;border-top:1px solid var(--rule);padding-top:16px;}
-    .tr-stat:first-child{border-top:none;padding-top:0;}
-  }
+  /* sections */
+  section.wrap{padding-top:110px;padding-bottom:20px}
+  .sec-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.4vw,76px);line-height:1;letter-spacing:-.03em}
+  .sec-head h2 em{color:var(--accent)}
+  .sec-head p{max-width:30em;color:var(--ink-2)}
 
-  /* SECTIONS */
-  section{padding:24px 0;border-bottom:1px solid var(--rule);}
-  section:last-of-type{border-bottom:none;}
-  .sec-head{
-    display:flex;
-    align-items:baseline;
-    gap:10px;
-    margin-bottom:16px;
-  }
-  .sec-head .num{
-    font-family:var(--mono);
-    font-size:12px;
-    color:var(--green);
-    font-weight:600;
-  }
-  .sec-head h2{
-    font-weight:700;
-    font-size:16px;
-    margin:0;
-    text-transform:uppercase;
-    letter-spacing:.03em;
-  }
-  .sec-note{font-size:13px;color:var(--ink-faint);margin:-8px 0 14px;max-width:62ch;}
+  /* case studies */
+  .case{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start;padding:54px 0;border-top:1px solid var(--line)}
+  .case:nth-of-type(even){grid-template-columns:1.2fr .8fr}
+  .case:nth-of-type(even) .copy{order:2}
+  .case .copy{position:sticky;top:110px}
+  .case .num{font-family:var(--serif);font-size:20px;color:var(--accent)}
+  .case h3{font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.6vw,52px);line-height:1.02;letter-spacing:-.025em;margin:10px 0 16px}
+  .case p{color:var(--ink-2);margin-bottom:18px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{font:500 12px var(--mono);padding:6px 11px;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);color:var(--ink-2)}
+  .result{margin-top:20px;padding:16px 18px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 14px 14px 0;font-size:14.5px;color:var(--ink)}
+  @media(max-width:900px){.case,.case:nth-of-type(even){grid-template-columns:1fr;gap:26px}.case:nth-of-type(even) .copy{order:0}.case .copy{position:static}}
 
-  .profile-text p{color:var(--ink-soft);font-size:14.5px;margin:0;max-width:64ch;}
+  /* browser frame */
+  .frame{border-radius:18px;background:var(--frame);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+  .frame .bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--frame) 70%,var(--card))}
+  .frame .bar i{width:10px;height:10px;border-radius:50%;background:var(--ink-3);opacity:.35}
+  .frame .bar span{margin-left:10px;font:12px var(--mono);color:var(--ink-3)}
+  .frame .bar em{margin-left:auto;font:11px var(--mono);color:var(--ink-3);font-style:normal}
+  .scroller{overflow:auto;cursor:zoom-in;scrollbar-width:thin}
+  .scroller.pan{cursor:grab}
+  .scroller img{width:100%;height:auto}
+  .scroller.h img{width:auto;height:340px;max-width:none}
+  .scroller.v{max-height:620px}
+  .scroller.sq{max-height:560px}
+  .frame.dark .scroller{background:#0b0d0e}
+  .hint{padding:9px 14px;text-align:right;font:11px var(--mono);color:var(--ink-3);border-top:1px solid var(--line)}
 
-  /* ENTRY ROW */
-  .entry-row{padding:15px 0;border-top:1px solid var(--rule);}
-  section .entry-row:first-of-type{border-top:none;padding-top:0;}
-  .entry-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:4px;}
-  .entry-row h3{font-size:15.5px;font-weight:700;margin:0;}
-  .entry-row .dates{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);white-space:nowrap;}
-  .status-tag{
-    display:inline-block;
-    font-family:var(--mono);
-    font-size:10.5px;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    color:var(--green);
-    border:1px solid var(--green);
-    padding:2px 7px;
-    margin:6px 0 10px;
-  }
-  .entry-row .role-line{font-size:13px;color:var(--ink-soft);margin:0 0 10px;font-style:italic;}
-  .entry-row p.blurb{margin:0 0 10px;color:var(--ink-soft);font-size:14px;max-width:60ch;}
-  .entry-row ul{margin:0;padding:0;list-style:none;max-width:60ch;}
-  .entry-row ul li{position:relative;padding-left:16px;margin-bottom:7px;font-size:13.5px;color:var(--ink-soft);}
-  .entry-row ul li::before{content:"–";position:absolute;left:0;color:var(--green);}
-  .entry-row ul li strong{color:var(--ink);font-weight:600;}
-  .entry-row.compact{padding:11px 0;}
-  .entry-row.compact h3{font-size:14.5px;}
-  .co-link{font-size:12px;color:var(--ink-faint);text-decoration:none;margin-left:6px;}
-  .co-link:hover{color:var(--green);}
+  /* companies */
+  .companies{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:14px}
+  .co{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:.25s;display:flex;flex-direction:column;gap:10px}
+  .co:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .co.wide{grid-column:span 2}
+  .co.big{grid-row:span 2;background:var(--ink);color:var(--bg);border-color:transparent}
+  .co.big p,.co.big li{color:color-mix(in srgb,var(--bg) 72%,transparent)}
+  .co.big strong{color:var(--bg)}
+  .co h3{font-family:var(--serif);font-weight:400;font-size:34px;letter-spacing:-.02em;line-height:1}
+  .co .when{font:12px var(--mono);color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em}
+  .co.big .when{color:color-mix(in srgb,var(--bg) 55%,transparent)}
+  .co .role{font-weight:600;font-size:14.5px}
+  .co p,.co li{font-size:14.5px;color:var(--ink-2)}
+  .co ul{padding-left:18px;display:grid;gap:8px}
+  .co .site{margin-top:auto;padding-top:6px;font:500 12px var(--mono);letter-spacing:.04em;color:var(--accent);border-bottom:1px solid transparent;align-self:flex-start;transition:.2s}
+  .co .site:hover{border-color:currentColor}
+  .co.big .site{color:var(--accent-2)}
+  .pill{align-self:flex-start;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+  .co.big .pill{background:rgba(255,255,255,.12);color:var(--accent-2)}
+  @media(max-width:900px){.companies{grid-template-columns:1fr}.co.big{grid-row:auto}.co.wide{grid-column:auto}}
 
-  /* PROJECTS */
-  .proj-flagship{padding:17px 0;border-top:1px solid var(--rule);}
-  section .proj-flagship:first-of-type{border-top:none;padding-top:0;}
-  .proj-idx{
-    display:block;
-    font-family:var(--mono);
-    font-size:11px;
-    color:var(--ink-faint);
-    margin-bottom:6px;
-  }
-  .shot-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
-  @media(max-width:480px){ .shot-grid{grid-template-columns:1fr;} }
-  .shot-placeholder, .photo-pending{
-    appearance:none;
-    font-family:var(--mono);
-    cursor:pointer;
-    position:relative;
-    overflow:hidden;
-  }
-  .shot-placeholder:focus-visible, .photo-pending:focus-visible{outline:2px solid var(--green);outline-offset:2px;}
-  .shot-placeholder img, .photo-pending img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-  }
-  .shot-placeholder::after, .photo-pending::after{
-    content:"⤢ Click to expand";
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:rgba(250,250,248,.92);
-    opacity:0;
-    transition:opacity .15s ease;
-    font-family:var(--mono);
-    font-size:10px;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    color:var(--ink);
-  }
-  .shot-placeholder:hover, .photo-pending:hover{border-color:var(--green);}
-  .shot-placeholder:hover::after, .photo-pending:hover::after{opacity:1;}
-  .shot-placeholder{
-    width:100%;
-    aspect-ratio:16/10;
-    background:var(--green-soft);
-    border:1px solid var(--rule);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:var(--ink-faint);
-    font-size:10.5px;
-    line-height:1.5;
-    padding:8px;
-    transition:border-color .15s ease;
-  }
-  .stacklist{font-family:var(--mono);font-size:11px;color:var(--ink-faint);margin:0;}
-  .know-more{
-    appearance:none;border:none;background:none;
-    color:var(--green);
-    font-family:var(--mono);
-    font-size:11.5px;
-    text-transform:uppercase;
-    letter-spacing:.04em;
-    cursor:pointer;
-    padding:0;
-    margin-top:8px;
-    border-bottom:1px solid var(--green);
-  }
-  .know-more:hover{opacity:.7;}
+  /* community */
+  .mosaic{columns:3 260px;column-gap:14px}
+  .mosaic figure{position:relative;margin:0 0 14px;border-radius:18px;overflow:hidden;break-inside:avoid;cursor:zoom-in;background:var(--frame)}
+  .mosaic img{width:100%;transition:transform .6s}
+  .mosaic figure:hover img{transform:scale(1.05)}
+  .mosaic figcaption{position:absolute;inset:auto 0 0 0;padding:34px 16px 14px;color:#fff;font-size:13.5px;font-weight:500;background:linear-gradient(transparent,rgba(0,0,0,.72));transform:translateY(40%);opacity:0;transition:.3s}
+  .mosaic figure:hover figcaption{transform:none;opacity:1}
+  .mosaic figcaption span{display:block;font:11px var(--mono);opacity:.75;margin-top:2px}
 
-  .proj-list{margin-top:4px;}
-  .proj-list-row{
-    display:grid;
-    grid-template-columns:20px 1fr;
-    gap:14px;
-    padding:9px 0;
-    border-top:1px solid var(--rule);
-  }
-  .proj-list-row:first-child{border-top:none;}
-  .proj-list-row .idx{font-family:var(--mono);font-size:11px;color:var(--ink-faint);}
-  .proj-list-row h4{font-size:13.5px;font-weight:700;margin:0 0 3px;}
-  .proj-list-row p{font-size:13px;color:var(--ink-soft);margin:0 0 5px;max-width:60ch;}
-  .proj-list-row .stacklist a{color:var(--green);border-bottom:1px solid var(--green);text-decoration:none;}
-  .proj-list-row.one-line{padding:7px 0;align-items:baseline;}
-  .proj-list-row.one-line p{margin:0;max-width:64ch;}
-  .proj-list-row.one-line p strong{color:var(--ink);font-weight:600;}
-  .proj-list-row.one-line p a{color:var(--green);border-bottom:1px solid var(--green);text-decoration:none;}
+  /* video recaps */
+  .videos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+  .vid{position:relative;border-radius:18px;overflow:hidden;background:#0b0d0e;aspect-ratio:16/9;box-shadow:var(--shadow)}
+  .vid video{width:100%;height:100%;object-fit:cover;display:block}
+  .vid .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border:0;cursor:pointer;
+    background:linear-gradient(transparent 45%,rgba(0,0,0,.6));color:#fff;transition:opacity .3s}
+  .vid .play i{width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;transition:transform .25s;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+  .vid .play i::after{content:"";margin-left:5px;border-left:18px solid #14181a;border-top:11px solid transparent;border-bottom:11px solid transparent}
+  .vid .play:hover i{transform:scale(1.08)}
+  .vid .cap{position:absolute;left:18px;bottom:14px;right:18px;text-align:left;pointer-events:none;font-size:14px;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+  .vid .cap span{display:block;font:11px var(--mono);letter-spacing:.06em;text-transform:uppercase;opacity:.85;margin-bottom:2px}
+  .vid.on .play{opacity:0;pointer-events:none}
+  @media(max-width:760px){.videos{grid-template-columns:1fr}}
+  .partners{margin-top:64px;padding-top:30px;border-top:1px solid var(--line)}
+  .plabel{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3vw,36px);letter-spacing:-.02em;margin-bottom:22px}
+  .logos{display:flex;flex-wrap:wrap;gap:20px 22px;align-items:center}
+  .logos a{display:flex;align-items:center;justify-content:center;height:78px;min-width:170px;padding:0 28px;background:var(--card);border:1px solid var(--line);border-radius:18px;transition:.25s}
+  .logos a:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--accent)}
+  .logos img{height:30px;width:auto;max-width:140px;opacity:.8;transition:.3s}
+  .logos a:hover img{opacity:1}
+  :root[data-theme=dark] .logos img{filter:grayscale(1) invert(1)}
 
-  /* CREDENTIALS */
-  .cred-line{font-size:13.5px;color:var(--ink-soft);padding:9px 0;border-top:1px solid var(--rule);}
-  .cred-line:first-child{border-top:none;padding-top:0;}
-  .cred-line strong{color:var(--ink);}
+  /* career */
+  .two{display:grid;grid-template-columns:1.3fr 1fr;gap:56px}
+  .row{display:grid;grid-template-columns:140px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--line)}
+  .row .d{font:12px var(--mono);color:var(--ink-3);padding-top:4px}
+  .row h4{font-size:17px;font-weight:600}
+  .row p{font-size:14.5px;color:var(--ink-2)}
+  .row .site{display:inline-block;margin-top:6px;font:500 12px var(--mono);letter-spacing:.04em;color:var(--accent);border-bottom:1px solid transparent;transition:.2s}
+  .row .site:hover{border-color:currentColor}
+  @media(max-width:860px){.two{grid-template-columns:1fr}.row{grid-template-columns:1fr;gap:4px}}
 
-  .label-row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:9px 0;border-top:1px solid var(--rule);}
-  .label-row:first-child{border-top:none;padding-top:0;}
-  .label-row .cat{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--green);padding-top:1px;}
-  .label-row .list{font-size:13.5px;color:var(--ink-soft);}
-  @media(max-width:560px){ .label-row{grid-template-columns:1fr;gap:4px;} }
+  /* footer */
+  .final{margin-top:110px;padding:110px 0 46px;background:var(--ink);color:var(--bg);border-radius:46px 46px 0 0;text-align:center}
+  .final h2{font-family:var(--serif);font-weight:400;font-size:clamp(52px,9.5vw,150px);line-height:.92;letter-spacing:-.035em}
+  .final h2 em{color:var(--accent-2)}
+  .final p{margin:22px auto 34px;color:color-mix(in srgb,var(--bg) 65%,transparent);max-width:30em}
+  .final .btn{border-color:rgba(255,255,255,.22);color:var(--bg)}
+  .final .btn.primary{background:var(--accent-2);color:#0d1110}
+  .final .meta{margin-top:70px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:12px var(--mono);color:color-mix(in srgb,var(--bg) 50%,transparent)}
 
-  .community-line{font-size:13.5px;color:var(--ink-soft);max-width:64ch;}
-  .community-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-  .community-grid h4{font-size:13.5px;font-weight:700;margin:0 0 4px;}
-  .community-grid p{font-size:12.5px;color:var(--ink-soft);margin:0;}
-  .photo-pending{
-    width:100%;aspect-ratio:4/3;
-    border:1px solid var(--rule);
-    background:var(--green-soft);
-    display:flex;align-items:center;justify-content:center;
-    text-align:center;color:var(--ink-faint);
-    font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;
-    margin-bottom:10px;
-    transition:border-color .15s ease;
-  }
-  @media(max-width:600px){ .community-grid{grid-template-columns:1fr;} }
+  /* lightbox */
+  dialog{border:0;padding:0;background:transparent;max-width:min(1200px,94vw);max-height:92vh;overflow:visible}
+  dialog::backdrop{background:rgba(8,10,10,.82);backdrop-filter:blur(6px)}
+  dialog .box{background:var(--card);border-radius:18px;overflow:auto;max-height:90vh}
+  dialog img{width:100%;height:auto}
+  dialog .x{position:absolute;right:-6px;top:-14px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:var(--accent);color:#fff;font-size:20px;cursor:pointer}
+  dialog p{padding:14px 18px;font:12px var(--mono);color:var(--ink-2)}
 
-  /* PARTNERSHIPS */
-  .sub-label{
-    font-family:var(--mono);
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:.06em;
-    color:var(--ink-faint);
-    margin:26px 0 12px;
-    padding-top:22px;
-    border-top:1px solid var(--rule);
-  }
-  .partner-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
-  .partner-logo{
-    aspect-ratio:3/2;
-    border:1px solid var(--rule);
-    display:flex;align-items:center;justify-content:center;
-    text-align:center;
-    padding:14px;
-    transition:border-color .15s ease;
-  }
-  .partner-logo img{
-    max-width:100%;
-    max-height:100%;
-    object-fit:contain;
-    filter:grayscale(1) opacity(.65);
-    transition:filter .15s ease;
-  }
-  .partner-logo:hover{border-color:var(--green);}
-  .partner-logo:hover img{filter:grayscale(0) opacity(1);}
-  @media(max-width:640px){ .partner-grid{grid-template-columns:repeat(3,1fr);} }
-  @media(max-width:420px){ .partner-grid{grid-template-columns:repeat(2,1fr);} }
-
-  footer{padding:32px 0 22px;}
-  footer h2{font-weight:700;font-size:clamp(22px,4vw,28px);margin:0 0 10px;}
-  footer .blurb{color:var(--ink-soft);font-size:14.5px;margin:0 0 16px;max-width:50ch;}
-  .colophon{display:flex;gap:18px;flex-wrap:wrap;margin-top:20px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;}
-  .colophon a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid var(--ink-faint);padding-bottom:2px;}
-  .colophon a:hover{color:var(--green);border-color:var(--green);}
-  .fineprint{margin-top:22px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);}
-
-  /* MODAL */
-  dialog.project-modal{
-    border:1px solid var(--ink);
-    border-radius:0;
-    padding:0;
-    width:min(560px,90vw);
-    max-height:85vh;
-    overflow:auto;
-    box-shadow:none;
-  }
-  dialog.project-modal::backdrop{background:rgba(20,20,22,.5);}
-  .modal-image{
-    width:100%;aspect-ratio:16/9;
-    background:var(--green-soft);
-    border-bottom:1px solid var(--rule);
-    display:flex;align-items:center;justify-content:center;
-    color:var(--ink-faint);font-family:var(--mono);font-size:11px;
-    position:relative;
-    overflow:hidden;
-  }
-  #modal-img{width:100%;height:100%;object-fit:cover;display:block;}
-  .modal-close{
-    position:absolute;top:0;right:0;
-    width:34px;height:34px;border:none;border-left:1px solid var(--rule);border-bottom:1px solid var(--rule);
-    background:var(--paper);font-size:16px;cursor:pointer;color:var(--ink);
-  }
-  .modal-close:hover{color:var(--green);}
-  .modal-body{padding:24px 26px 28px;}
-  .modal-eyebrow{font-family:var(--mono);font-size:10.5px;color:var(--green);margin:0 0 8px;text-transform:uppercase;font-weight:600;}
-  .modal-body h3{font-size:18px;margin:0 0 10px;font-weight:700;}
-  .modal-body p{font-size:13.5px;color:var(--ink-soft);margin:0 0 12px;line-height:1.6;}
-  .modal-label{font-family:var(--mono);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-faint);margin:0 0 4px;}
-  .modal-link{color:var(--green);font-weight:600;text-decoration:none;font-size:13px;border-bottom:1px solid var(--green);}
-  .modal-note{font-size:12.5px;color:var(--ink-faint);font-style:italic;}
-
-  /* LIGHTBOX */
-  dialog.lightbox{
-    border:1px solid var(--ink);
-    border-radius:0;
-    padding:0;
-    width:min(760px,92vw);
-    max-height:90vh;
-    overflow:auto;
-    box-shadow:none;
-    background:var(--paper);
-  }
-  dialog.lightbox::backdrop{background:rgba(20,20,22,.72);}
-  .lightbox-body{position:relative;}
-  .lightbox-close{
-    position:absolute;top:0;right:0;
-    width:36px;height:36px;border:none;border-left:1px solid var(--rule);border-bottom:1px solid var(--rule);
-    background:var(--paper);font-size:18px;cursor:pointer;color:var(--ink);z-index:2;
-  }
-  .lightbox-close:hover{color:var(--green);}
-  #lightbox-img{width:100%;max-height:72vh;object-fit:contain;display:block;background:#0d0d0d;}
-  .lightbox-pending{
-    width:100%;aspect-ratio:16/10;
-    display:flex;align-items:center;justify-content:center;
-    background:var(--green-soft);
-    color:var(--ink-faint);
-    font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.04em;
-  }
-  .lightbox-caption{padding:13px 18px;font-size:13px;color:var(--ink-soft);margin:0;border-top:1px solid var(--rule);font-family:var(--mono);}
-
-  /* PRINT / PDF — condensed 2-page layout */
-  .pdf-only{ display:none; }
-  @media print{
-    @page{ size:letter; margin:0.35in 0.45in; }
-    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-    nav, .btn-row, .know-more, .shot-placeholder::after, .photo-pending::after{ display:none !important; }
-    body{ font-size:10.5px; line-height:1.4; }
-    main{ padding:0; max-width:none; }
-    .masthead{ padding:0 0 10px; }
-    .masthead-top{ margin-bottom:10px; }
-    .ask-line{ padding:6px 10px; margin-bottom:8px; }
-    .meta-list{ margin-bottom:0; }
-    .track-record{ padding:6px 0; }
-    section{ padding:4px 0; }
-    .sec-head{ break-after:avoid; margin-bottom:6px; }
-    .sec-note{ display:none; }
-    .entry-row{ padding:6px 0; }
-    .entry-row.compact{ padding:5px 0; }
-    .cred-line, .label-row{ padding:5px 0; }
-    .proj-flagship{ padding:5px 0; }
-    .proj-list-row.one-line{ padding:3px 0; }
-    .proj-list{ margin-top:0; }
-    .proj-idx{ display:none; }
-    .entry-row, .proj-flagship, .proj-list-row, .cred-line, .label-row{ break-inside:avoid; }
-    .entry-row ul{ margin-bottom:0; }
-    .entry-row ul li{ margin-bottom:2px; }
-    .status-tag{ margin:4px 0 6px; }
-    .entry-row .role-line{ margin-bottom:6px; }
-    .entry-row p.blurb{ margin-bottom:6px; }
-    .shot-grid{ display:none; }
-    .community-grid{ display:none; }
-    .partnerships{ display:none; }
-    .print-hide{ display:none; }
-    .pdf-only{ display:block; font-size:10.5px; color:var(--ink-soft); max-width:none; margin:0; }
-    dialog{ display:none !important; }
-    footer{ padding:8px 0 0; }
-    footer .blurb{ margin-bottom:8px; }
-    .btn-primary{ break-inside:avoid; }
-    .colophon, .fineprint{ display:none; }
-  }
+  /* reveal */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.chip,.dot{animation:none}}
 </style>
 </head>
 <body>
 
-<nav>
-  <span class="brand">VR — Profile</span>
-  <span class="links">
-    <a href="#companies">Companies</a>
-    <a href="#projects">Projects</a>
-    <a href="#community">Community</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </span>
+<nav class="nav" aria-label="Primary">
+  <a href="#work">Work</a><a href="#companies">Companies</a><a href="#community">Community</a><a href="#career">Career</a>
+  <button id="theme" aria-label="Toggle theme">◐</button>
+  <a class="cta" href="https://calendly.com/avvyco/30min" target="_blank" rel="noopener">Book a call</a>
 </nav>
 
-<main>
-
-  <header class="masthead" id="top">
-    <div class="masthead-top">
-      <div>
-        <p class="doc-label">Field Brief — Curriculum Vitae</p>
-        <h1>Valentín Rodríguez</h1>
-        <p class="role">Customer Success &amp; Operations, EdTech, Talent Acquisition.</p>
-        <p class="hero-teaser print-hide">Also building AI-native internal tools with Claude Code — <a href="#projects">see Projects below</a>.</p>
-      </div>
-      <div class="photo-frame">
-        <img src="./assets/valentin-profile-portrait.jpeg" alt="Valentín Rodríguez" />
+<header class="hero wrap">
+  <div class="hero-grid">
+    <div>
+      <span class="badge rv"><span class="dot"></span>Open to Customer Success &amp; Client Operations roles</span>
+      <h1 class="rv">Valentín<br><em>Rodríguez</em></h1>
+      <p class="lede rv">Cofounder who builds and runs <b>customer success &amp; client operations</b> for EdTech and Talent: from onboarding and retention to the <b>AI-native systems</b> that keep a lean team running.</p>
+      <div class="btns rv">
+        <a class="btn primary" href="https://calendly.com/avvyco/30min" target="_blank" rel="noopener">Book a call →</a>
+        <a class="btn ghost" href="./Valentin-Rodriguez-CV.pdf" download>Download CV</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/valenrodriguez/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-    <p class="ask-line"><b>Open to:</b> Customer Success roles · Operations roles.</p>
-    <ul class="meta-list">
-      <li><a href="https://www.linkedin.com/in/valenrodriguez/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://github.com/valentinrod" target="_blank" rel="noopener">GitHub</a></li>
-      <li>Barranquilla, Colombia</li>
-      <li><a href="mailto:valentin.rj@hotmail.com">valentin.rj@hotmail.com</a></li>
-      <li>+1 754 202 5286 (US)</li>
-      <li>+57 312 623 0946 (CO)</li>
-    </ul>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="https://calendly.com/avvyco/30min" target="_blank" rel="noopener">Book a call</a>
-      <a class="btn btn-ghost" href="./Valentin-Rodriguez-CV.pdf" download>Download PDF</a>
+    <div class="portrait rv">
+      <div class="arch"><img src="./assets/valentin-profile-portrait.jpeg" alt="Valentín Rodríguez"></div>
+      <div class="chip a"><i>🎓</i>Supertest · 18 institutions</div>
+      <div class="chip b"><i>📍</i>Barranquilla, CO</div>
     </div>
-  </header>
-
-  <div class="track-record">
-    <div class="tr-stat"><span class="num">100+</span><span class="label">tech professionals recruited &amp; placed</span></div>
-    <div class="tr-stat"><span class="num">4+</span><span class="label">years building &amp; running operations functions</span></div>
-    <div class="tr-stat"><span class="num">4</span><span class="label">companies co-founded since 2019</span></div>
-    <div class="tr-stat"><span class="num">9</span><span class="label">internal tools built to support Supertest's operations</span></div>
   </div>
 
-  <section id="profile">
-    <div class="sec-head"><span class="num">1.0</span><h2>Profile</h2></div>
-    <div class="profile-text">
-      <p>Cofounder with 4+ years building and running operations functions across EdTech and Talent — from customer onboarding and retention to the internal systems that keep a lean team running. Currently cofounding Supertest, an AI-personalized EdTech platform, where I own customer success for our institutional accounts and build the internal tools — with Claude Code — that run day-to-day operations.</p>
-    </div>
-  </section>
-
-  <section id="companies">
-    <div class="sec-head"><span class="num">2.0</span><h2>Companies Founded</h2></div>
-
-    <div class="entry-row">
-      <div class="entry-top"><h3>Supertest <a class="co-link" href="https://supertest.co" target="_blank" rel="noopener">↗ supertest.co</a></h3><span class="dates">Jan 2026 — Present</span></div>
-      <span class="status-tag">Active — Scaling</span>
-      <p class="role-line">Cofounder — Customer Success &amp; Operations</p>
-      <p class="blurb">AI-personalized EdTech platform preparing Colombian students for the Saber 11 and Saber Pro standardized tests, sold B2B to schools and universities. Barranquilla, Colombia.</p>
-      <ul>
-        <li>Manages onboarding and retention across <strong>18 institutional accounts</strong> (schools &amp; universities), supporting <strong>2,100+ active students</strong> — projected <strong>$200K ARR</strong> for the platform.</li>
-        <li>Uses <strong>Claude Code</strong> to build the internal tools — a Slack ops assistant, a WhatsApp support agent, and more — that run the team's day-to-day operations.</li>
-      </ul>
-    </div>
-
-    <div class="entry-row compact">
-      <div class="entry-top"><h3>Avvy Talent <a class="co-link" href="https://avvy.co" target="_blank" rel="noopener">↗ avvy.co</a></h3><span class="dates">Jan 2022 — Jun 2026</span></div>
-      <span class="status-tag">Exited — Contract Wind-Down, Jun 2026</span>
-      <p class="role-line">Co-Founder — People Operations &amp; Talent</p>
-      <p class="blurb">LATAM-focused staff augmentation and recruiting agency serving U.S. and European tech companies.</p>
-      <ul>
-        <li>Closed out the agency through an <strong>orderly wind-down of client and contractor contracts</strong> after 4+ years scaling the business.</li>
-        <li>Scaled to <strong>$872K ARR</strong> at peak, with <strong>200+ tech talent placements</strong> across <strong>40+ client accounts</strong> in the US and Europe — running end-to-end people operations for fully remote teams.</li>
-      </ul>
-    </div>
-
-    <div class="entry-row compact">
-      <div class="entry-top"><h3>MondayLoop</h3><span class="dates">Jan 2025 — Aug 2025</span></div>
-      <span class="status-tag">Reallocated to Supertest</span>
-      <p class="role-line">Co-Founder</p>
-      <p class="blurb">Shipped a 4-app consumer portfolio (calorie tracker, dog breed ID, AI image tools) to 1,000+ downloads before reallocating focus to Supertest.</p>
-    </div>
-
-    <div class="entry-row compact">
-      <div class="entry-top"><h3>Rutana</h3><span class="dates">Mar 2019 — Mar 2020</span></div>
-      <span class="status-tag">Early Venture</span>
-      <p class="role-line">Co-Founder</p>
-      <p class="blurb">Co-founded and operated a university car-sharing app across 4 campuses, reaching 500+ shared rides among 2,000+ users.</p>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="sec-head"><span class="num">3.0</span><h2>Projects Built with Claude Code</h2></div>
-    <p class="sec-note">Internal tools built solo for Supertest with Claude Code — supporting its day-to-day operations. Two flagship examples below; the rest in brief.</p>
-
-    <div class="proj-flagship">
-      <div class="shot-grid">
-        <button type="button" class="shot-placeholder" onclick="openLightbox('./assets/proj-sales-orchestrator-1.jpg','Sales Orchestrator — followups command generating the pipeline draft in #ventas')"><img src="./assets/proj-sales-orchestrator-1.jpg" alt="Slack — followups command and pipeline draft" loading="lazy"></button>
-        <button type="button" class="shot-placeholder" onclick="openLightbox('./assets/proj-sales-orchestrator-2.jpg','Sales Orchestrator — investiga command generating a pre-meeting research PDF')"><img src="./assets/proj-sales-orchestrator-2.jpg" alt="Slack — investiga command and research PDF" loading="lazy"></button>
-      </div>
-      <span class="proj-idx">01</span>
-      <h3>Sales Orchestrator (Slack Agent)</h3>
-      <p class="blurb print-hide">The command center: lives in #ventas, reads the live pipeline from the CRM, executes commercial tasks on command, and runs the other 8 agents by mention — zero terminal.</p>
-      <p class="stacklist print-hide">Claude Code · Anthropic API · Python · Slack Bolt (Socket Mode) · Attio API · GitHub API · DigitalOcean VPS + pm2</p>
-      <p class="pdf-only">Command center in #ventas: reads the live CRM pipeline, executes commercial tasks, and runs the other agents by mention.</p>
-      <button class="know-more" onclick="openProject(0)">Know more →</button>
-    </div>
-
-    <div class="proj-flagship">
-      <div class="shot-grid">
-        <button type="button" class="shot-placeholder" onclick="openLightbox('./assets/proj-claudia-1.jpg','Claudia — WhatsApp conversation qualifying a prospect, with Calendly CTA')"><img src="./assets/proj-claudia-1.jpg" alt="WhatsApp — Claudia qualifying a prospect" loading="lazy"></button>
-        <button type="button" class="shot-placeholder" onclick="openLightbox('./assets/proj-claudia-2.jpg','Claudia — support conversation, escalates a flagged exam question to the academic team')"><img src="./assets/proj-claudia-2.jpg" alt="WhatsApp — Claudia support escalation" loading="lazy"></button>
-      </div>
-      <span class="proj-idx">02</span>
-      <h3>WhatsApp SDR &amp; Support Agent ("Claudia")</h3>
-      <p class="blurb print-hide">Qualifies inbound prospects and answers customer support over WhatsApp, with human-like typing delay and urgency-routed Slack alerts.</p>
-      <p class="stacklist print-hide">Claude Code · Anthropic API · EvolutionAPI / Baileys · Docker · Python · VPS Deployment</p>
-      <p class="pdf-only">Qualifies inbound prospects and answers customer support over WhatsApp, with urgency-routed Slack alerts.</p>
-      <button class="know-more" onclick="openProject(1)">Know more →</button>
-    </div>
-
-    <div class="proj-list">
-      <div class="proj-list-row one-line">
-        <span class="idx">03</span>
-        <p><strong>Cold Outreach Sequencer</strong> — turns a CSV of target institutions into a personalized multi-touch email + WhatsApp sequence, with auto stop-on-reply and CRM sync.</p>
-      </div>
-      <div class="proj-list-row one-line">
-        <span class="idx">04</span>
-        <p><strong>Pre-Meeting Research Agent</strong> — generates a PDF research brief on an institution, delivered to Slack in ~2 minutes before every call.</p>
-      </div>
-      <div class="proj-list-row one-line">
-        <span class="idx">05</span>
-        <p><strong>Call Reviewer</strong> — pulls the latest sales call transcript, opens follow-up tasks in Linear, and drafts a CRM note with a suggested deal stage.</p>
-      </div>
-      <div class="proj-list-row one-line print-hide">
-        <span class="idx">06</span>
-        <p><strong>Internal Wiki with Natural-Language Editing</strong> — a 22-page company wiki the Slack agent can update and redeploy on command. <a href="https://supertest-wiki.vercel.app" target="_blank" rel="noopener">View live →</a></p>
-      </div>
-      <div class="proj-list-row one-line print-hide">
-        <span class="idx">07</span>
-        <p><strong>This Website</strong> — this CV site itself, built end to end with Claude Code. <a href="https://github.com/valentinrod/cv-website" target="_blank" rel="noopener">View repo →</a></p>
-      </div>
-      <div class="proj-list-row one-line print-hide">
-        <span class="idx">08</span>
-        <p><strong>Pomo</strong> — a minimal, retro pomodoro timer with a drag-and-drop kanban board, a personal side project. <a href="https://pomo.valentinrod.com" target="_blank" rel="noopener">View live →</a> · <a href="https://github.com/valentinrod/pomo" target="_blank" rel="noopener">View repo →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section id="community">
-    <div class="sec-head"><span class="num">4.0</span><h2>Community and Events</h2></div>
-    <div class="community-grid">
-      <div>
-        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-caribedev.jpg','Caribedev.org — community sponsor')"><img src="./assets/community-caribedev.jpg" alt="Caribedev.org community event" loading="lazy"></button>
-        <h4>Caribedev.org</h4>
-        <p>Community sponsor · 2023–Present</p>
-      </div>
-      <div>
-        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-supabase.jpg','Supabase Community Meetups — host')"><img src="./assets/community-supabase.jpg" alt="Supabase Community Meetup" loading="lazy"></button>
-        <h4>Supabase Community Meetups</h4>
-        <p>Host · Bogotá / Barranquilla / Cartagena · 2023–Present</p>
-      </div>
-      <div>
-        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-shipaton.jpg','RevenueCat Shipathon — Barranquilla 2025')"><img src="./assets/community-shipaton.jpg" alt="RevenueCat Shipathon winner check" loading="lazy"></button>
-        <h4>RevenueCat Shipathon</h4>
-        <p>Barranquilla · 2025</p>
-      </div>
-      <div>
-        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-startupgrind-pitch.jpg','Startup Grind Global — pitching at Startup Pitches, San Francisco')"><img src="./assets/community-startupgrind-pitch.jpg" alt="Speaking on stage at Startup Grind Global" loading="lazy"></button>
-        <h4>Startup Grind Global</h4>
-        <p>Startup Pitches speaker · San Francisco, 2024</p>
-      </div>
-      <div>
-        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-startupgrind-team.jpg','Startup Grind Global — with the Avvy team, Fox Theater')"><img src="./assets/community-startupgrind-team.jpg" alt="With the Avvy team at Startup Grind Global" loading="lazy"></button>
-        <h4>Startup Grind Global</h4>
-        <p>With the Avvy team · San Francisco, 2024</p>
-      </div>
-      <div>
-        <button type="button" class="photo-pending" onclick="openLightbox('./assets/community-gathertown-party.png','Virtual team gathering on Gather.town')"><img src="./assets/community-gathertown-party.png" alt="Virtual team celebration on Gather.town" loading="lazy"></button>
-        <h4>Virtual Team Gathering</h4>
-        <p>Gather.town celebration</p>
-      </div>
-    </div>
-    <p class="pdf-only">Caribedev.org — community sponsor (2023–Present) · Supabase Community Meetups — host, Bogotá/Barranquilla/Cartagena (2023–Present) · RevenueCat Shipathon — Barranquilla (2025) · Startup Grind Global — San Francisco (2024).</p>
-
-    <div class="partnerships">
-      <p class="sub-label">Partnerships — Backed &amp; Supported By</p>
-      <div class="partner-grid">
-        <div class="partner-logo"><img src="./assets/partner-supabase.svg" alt="Supabase"></div>
-        <div class="partner-logo"><img src="./assets/partner-revenuecat.svg" alt="RevenueCat"></div>
-        <div class="partner-logo"><img src="./assets/partner-endeavor.svg" alt="Endeavor — Dream Bigger"></div>
-        <div class="partner-logo"><img src="./assets/partner-caribedev.svg" alt="Caribedev.org"></div>
-        <div class="partner-logo"><img src="./assets/partner-crafterstation.svg" alt="Crafter Station"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="sec-head"><span class="num">5.0</span><h2>Earlier Career</h2></div>
-    <p class="sec-note print-hide">Pre-founder roles, before moving into Customer Success &amp; Operations full-time.</p>
-
-    <div class="entry-row compact print-hide">
-      <div class="entry-top"><h3>Customer Experience Lead</h3><span class="dates">Nov 2021 — Mar 2022</span></div>
-      <p class="role-line">Farmu · Barranquilla, Colombia — VC-backed online drugstore marketplace</p>
-      <p class="blurb">Built the Customer Experience function from scratch — hiring, CRM/support tooling, KPIs, cross-team feedback loops.</p>
-    </div>
-
-    <div class="entry-row compact print-hide">
-      <div class="entry-top"><h3>Settlements Coordinator</h3><span class="dates">Jun 2020 — Oct 2021</span></div>
-      <p class="role-line">Lean Solutions Group · Barranquilla, Colombia</p>
-      <p class="blurb">Led contractor settlements across two U.S. logistics terminals — rate validation covering 200+ monthly payments.</p>
-    </div>
-
-    <div class="entry-row compact print-hide">
-      <div class="entry-top"><h3>Commercial Credit Analyst</h3><span class="dates">Mar 2018 — Mar 2019</span></div>
-      <p class="role-line">Banco Serfinanza · Barranquilla, Colombia</p>
-      <p class="blurb">Analyzed corporate financials and credit history to support lending decisions.</p>
-    </div>
-
-    <p class="pdf-only"><strong>Customer Experience Lead</strong>, Farmu (2021–22) — built the CX function from scratch. <strong>Settlements Coordinator</strong>, Lean Solutions Group (2020–21) — contractor settlements, 200+ monthly payments. <strong>Commercial Credit Analyst</strong>, Banco Serfinanza (2018–19).</p>
-  </section>
-
-  <section id="credentials">
-    <div class="sec-head"><span class="num">6.0</span><h2>Credentials</h2></div>
-    <p class="cred-line"><strong>Universidad del Norte</strong> — BA, Business Administration · Barranquilla, Colombia (2012–2017)</p>
-    <p class="cred-line"><strong>Valencia College</strong> — HR Management Certificate · Orlando, FL (2014)</p>
-    <p class="cred-line"><strong>Endeavor Accelerator</strong> — Dream Bigger Program (2024)</p>
-  </section>
-
-  <footer id="contact">
-    <div class="sec-head"><span class="num">7.0</span><h2>Contact</h2></div>
-    <h2>Let's build something.</h2>
-    <p class="blurb">Open to Customer Success and Operations roles.</p>
-    <a class="btn btn-primary" href="mailto:valentin.rj@hotmail.com">valentin.rj@hotmail.com</a>
-    <div class="colophon">
-      <a href="#top">Back to top</a>
-      <a href="https://www.linkedin.com/in/valenrodriguez/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="./Valentin-Rodriguez-CV.pdf" download>Download CV</a>
-    </div>
-    <p class="fineprint">Built with Claude Code · Barranquilla, Colombia · 2026</p>
-  </footer>
-
-</main>
-
-<dialog id="project-modal" class="project-modal">
-  <div class="modal-image" id="modal-image">
-    <button class="modal-close" aria-label="Close" onclick="document.getElementById('project-modal').close()">×</button>
-    <img id="modal-img" alt="" />
+  <div class="stats">
+    <div class="stat rv"><div class="n"><span data-n="100">0</span><small>+</small></div><p>tech professionals recruited &amp; placed</p></div>
+    <div class="stat rv"><div class="n"><span data-n="4">0</span><small>+</small></div><p>years building &amp; running client operations functions</p></div>
+    <div class="stat rv"><div class="n"><span data-n="4">0</span></div><p>companies co-founded since 2019</p></div>
+    <div class="stat rv"><div class="n"><span data-n="2100">0</span><small>+</small></div><p>active students supported across institutional accounts</p></div>
   </div>
-  <div class="modal-body">
-    <p class="modal-eyebrow" id="modal-index"></p>
-    <h3 id="modal-title"></h3>
-    <p id="modal-brief"></p>
-    <p class="modal-label">Results</p>
-    <p id="modal-results"></p>
-    <p class="modal-label">Stack</p>
-    <p id="modal-stack"></p>
-    <div class="modal-actions" id="modal-actions"></div>
-  </div>
-</dialog>
+</header>
 
-<dialog id="lightbox" class="lightbox">
-  <div class="lightbox-body">
-    <button class="lightbox-close" aria-label="Close" onclick="document.getElementById('lightbox').close()">×</button>
-    <img id="lightbox-img" alt="" />
-    <div id="lightbox-pending" class="lightbox-pending">Screenshot pending</div>
-    <p id="lightbox-caption" class="lightbox-caption"></p>
+<section id="work" class="wrap">
+  <div class="sec-head">
+    <h2 class="rv">Systems built<br>with <em>Claude Code</em></h2>
+    <p class="rv">Four tools that run customer success and client operations at Supertest. Real screenshots; institution and contact names are blurred. Click any frame to expand, scroll inside it to explore.</p>
   </div>
-</dialog>
+
+  <article class="case">
+    <div class="copy rv">
+      <span class="num">01</span>
+      <h3>Customer Journey Map</h3>
+      <p>One interactive map of the whole journey, B2B institutions and B2C families, from first touch through sale to customer success. Each step shows its channels and flags what is still missing.</p>
+      <div class="tags"><span>Claude Code</span><span>HTML / JS</span><span>Artifacts</span></div>
+      <div class="result">Source of truth that keeps the cockpit, ManyChat, n8n and the sales skill aligned.</div>
+    </div>
+    <div class="frame rv">
+      <div class="bar"><i></i><i></i><i></i><span>Mapa del journey</span><em>drag to pan →</em></div>
+      <div class="scroller h pan" data-full="./assets/proj-journey-map.png" data-cap="Customer Journey Map"><img src="./assets/proj-journey-map.png" alt="Customer journey map" loading="lazy"></div>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="copy rv">
+      <span class="num">02</span>
+      <h3>Sales Cockpit</h3>
+      <p>A daily sales cockpit on the live CRM pipeline: who to contact today, replies first, then overdue follow-ups, with the right channel and one-click logging. A natural-language bar lets me give Claude bulk instructions, proposed for approval before anything is written.</p>
+      <div class="tags"><span>Claude Code</span><span>Attio</span><span>n8n</span><span>ManyChat</span></div>
+      <div class="result">Replaces manual pipeline review with a prioritized daily list (87 open deals at the time of the screenshot).</div>
+    </div>
+    <div class="frame rv">
+      <div class="bar"><i></i><i></i><i></i><span>Sales Cockpit</span><em>scroll ↓</em></div>
+      <div class="scroller v" data-full="./assets/proj-sales-cockpit.png" data-cap="Sales Cockpit (names blurred)"><img src="./assets/proj-sales-cockpit.png" alt="Sales Cockpit: daily outreach cockpit" loading="lazy"></div>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="copy rv">
+      <span class="num">03</span>
+      <h3>ManyChat Setup</h3>
+      <p>A system of 12 automations (plus an archive folder) that turns social conversations into qualified leads: Instagram DMs and comments move to WhatsApp, triage separates schools from families, then follow-up, plan questions, opt-out and fallback flows take over. Contacts sync to the CRM; n8n runs the follow-up engine.</p>
+      <div class="tags"><span>ManyChat</span><span>WhatsApp</span><span>Instagram</span><span>n8n</span><span>Attio</span></div>
+      <div class="result">One entry point for every social lead, organized into small, named flows.</div>
+    </div>
+    <div class="frame rv">
+      <div class="bar"><i></i><i></i><i></i><span>ManyChat · Automations</span><em>scroll ↓</em></div>
+      <div class="scroller sq" data-full="./assets/proj-manychat-flow.png" data-cap="ManyChat: the full automation board"><img src="./assets/proj-manychat-flow.png" alt="ManyChat automations overview" loading="lazy"></div>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="copy rv">
+      <span class="num">04</span>
+      <h3>Customer Success Plan</h3>
+      <p>A six-stage lifecycle from signed deal to renewal (handoff, onboarding, adoption, monthly follow-up, renewal, expansion) with a weekly traffic-light check that triggers a rescue plan when adoption drops. Each step shows how many tasks are still to do, and a second lane covers families end to end, fully automated.</p>
+      <div class="tags"><span>Claude Docs</span><span>Attio</span><span>Supabase</span><span>n8n</span></div>
+      <div class="result">Goals: 30%+ weekly active students, 80%+ renewals, one referral or expansion per client per year (retention and growth targets still to validate).</div>
+    </div>
+    <div class="frame rv">
+      <div class="bar"><i></i><i></i><i></i><span>Customer Success Plan</span><em>scroll ↓</em></div>
+      <div class="scroller v" data-full="./assets/proj-customer-success-plan.png" data-cap="Customer Success Plan: goals and lifecycle flow chart"><img src="./assets/proj-customer-success-plan.png" alt="Customer Success Plan: goals and lifecycle flow chart" loading="lazy"></div>
+    </div>
+  </article>
+</section>
+
+<section id="companies" class="wrap">
+  <div class="sec-head"><h2 class="rv">Companies <em>founded</em></h2><p class="rv">Four ventures since 2019, from a university car-sharing app to a staff-augmentation agency that scaled to $872K ARR.</p></div>
+  <div class="companies">
+    <div class="co big rv">
+      <span class="pill">Active · Scaling</span>
+      <h3>Supertest</h3><span class="when">Jan 2026 — Present</span>
+      <span class="role">Cofounder — Customer Success &amp; Client Operations</span>
+      <p>AI-personalized EdTech platform preparing Colombian students for Saber 11 and Saber Pro, sold B2B to schools and universities.</p>
+      <ul><li>Onboarding and retention across <strong>18 institutional accounts</strong>, supporting <strong>2,100+ active students</strong>.</li><li>Projected <strong>$200K ARR</strong> for the platform.</li><li>Builds, with Claude Code, the internal tools that run client onboarding and daily operations.</li></ul>
+      <a class="site" href="https://supertest.co" target="_blank" rel="noopener">supertest.co ↗</a>
+    </div>
+    <div class="co wide rv"><span class="pill">Exited · Jun 2026</span><h3>Avvy Talent</h3><span class="when">Jan 2022 — Jun 2026</span><span class="role">Co-Founder — People Ops &amp; Talent</span><p>LATAM staff augmentation. <strong>$872K ARR</strong> at peak, 200+ placements, 40+ client accounts in the US and Europe; closed through an orderly wind-down.</p><a class="site" href="https://avvy.co" target="_blank" rel="noopener">avvy.co ↗</a></div>
+    <div class="co rv"><span class="pill">Reallocated</span><h3>MondayLoop</h3><span class="when">Jan 2025 — Aug 2025</span><span class="role">Co-Founder</span><p>4-app consumer portfolio with 1,000+ downloads before refocusing on Supertest.</p></div>
+    <div class="co rv"><span class="pill">Early venture</span><h3>Rutana</h3><span class="when">Mar 2019 — Mar 2020</span><span class="role">Co-Founder</span><p>University car-sharing app across 4 campuses: 500+ shared rides, 2,000+ users.</p></div>
+  </div>
+</section>
+
+<section id="community" class="wrap">
+  <div class="sec-head"><h2 class="rv">Community &amp; <em>events</em></h2><p class="rv">Hosting, sponsoring and pitching in the developer and startup scene. Two recaps from the Supabase Community Meetups in Bogotá and Barranquilla below.</p></div>
+  <div class="videos">
+    <div class="vid rv">
+      <video preload="none" playsinline controlslist="nodownload" poster="./assets/video/supabase-bogota-poster.jpg" data-src="./assets/video/supabase-bogota-720.mp4" data-src-sm="./assets/video/supabase-bogota-480.mp4"></video>
+      <button class="play" aria-label="Play Supabase Community Meetup Bogotá recap"><i></i><span class="cap"><span>Supabase Community Meetup</span>Bogotá recap · 0:27</span></button>
+    </div>
+    <div class="vid rv">
+      <video preload="none" playsinline controlslist="nodownload" poster="./assets/video/supabase-barranquilla-poster.jpg" data-src="./assets/video/supabase-barranquilla-720.mp4" data-src-sm="./assets/video/supabase-barranquilla-480.mp4"></video>
+      <button class="play" aria-label="Play Supabase Community Meetup Barranquilla recap"><i></i><span class="cap"><span>Supabase Community Meetup</span>Barranquilla recap · 0:24</span></button>
+    </div>
+  </div>
+  <div class="mosaic">
+    <figure class="rv" data-full="./assets/community-startupgrind-pitch.jpg" data-cap="Startup Grind Global, San Francisco 2024"><img src="./assets/community-startupgrind-pitch.jpg" alt="Pitching at Startup Grind Global" loading="lazy"><figcaption>Startup Grind Global<span>Startup Pitches · San Francisco, 2024</span></figcaption></figure>
+    <figure class="rv" data-full="./assets/community-supabase.jpg" data-cap="Supabase Community Meetups"><img src="./assets/community-supabase.jpg" alt="Supabase community meetup" loading="lazy"><figcaption>Supabase Community Meetups<span>Host · Bogotá / Barranquilla / Cartagena</span></figcaption></figure>
+    <figure class="rv" data-full="./assets/community-shipaton.jpg" data-cap="RevenueCat Shipathon, Barranquilla 2025"><img src="./assets/community-shipaton.jpg" alt="RevenueCat Shipathon" loading="lazy"><figcaption>RevenueCat Shipathon<span>Barranquilla · 2025</span></figcaption></figure>
+    <figure class="rv" data-full="./assets/community-caribedev.jpg" data-cap="Caribedev.org"><img src="./assets/community-caribedev.jpg" alt="Caribedev.org event" loading="lazy"><figcaption>Caribedev.org<span>Community sponsor · 2023–Present</span></figcaption></figure>
+    <figure class="rv" data-full="./assets/community-startupgrind-team.jpg" data-cap="Startup Grind Global team"><img src="./assets/community-startupgrind-team.jpg" alt="Startup Grind team" loading="lazy"><figcaption>Startup Grind Global<span>With the team</span></figcaption></figure>
+  </div>
+  <div class="partners rv">
+    <h3 class="plabel">Partners &amp; Programs</h3>
+    <div class="logos">
+      <a href="https://supabase.com/" target="_blank" rel="noopener" aria-label="Supabase"><img src="./assets/partner-supabase.svg" alt="Supabase"></a>
+      <a href="https://www.revenuecat.com/" target="_blank" rel="noopener" aria-label="RevenueCat"><img src="./assets/partner-revenuecat.svg" alt="RevenueCat"></a>
+      <a href="https://colombia.endeavor.org/" target="_blank" rel="noopener" aria-label="Endeavor Colombia"><img src="./assets/partner-endeavor.svg" alt="Endeavor"></a>
+      <a href="https://www.caribedev.org/" target="_blank" rel="noopener" aria-label="Caribedev.org"><img src="./assets/partner-caribedev.svg" alt="Caribedev.org"></a>
+      <a href="https://crafter.run/en" target="_blank" rel="noopener" aria-label="Crafter Station"><img src="./assets/partner-crafterstation.svg" alt="Crafter Station"></a>
+    </div>
+  </div>
+</section>
+
+<section id="career" class="wrap">
+  <div class="two">
+    <div>
+      <div class="sec-head"><h2 class="rv">Earlier <em>career</em></h2></div>
+      <div class="row rv"><span class="d">Nov 2021 — Mar 2022</span><div><h4>Customer Experience Lead · Farmu</h4><p>Built the CX function from scratch: hiring, CRM and support tooling, KPIs, cross-team feedback loops.</p><a class="site" href="https://www.farmu.com.co/" target="_blank" rel="noopener">farmu.com.co ↗</a></div></div>
+      <div class="row rv"><span class="d">Jun 2020 — Oct 2021</span><div><h4>Settlements Coordinator · Lean Solutions Group</h4><p>Contractor settlements across two U.S. logistics terminals, 200+ monthly payments.</p><a class="site" href="https://www.leangroup.com/" target="_blank" rel="noopener">leangroup.com ↗</a></div></div>
+      <div class="row rv"><span class="d">Mar 2018 — Mar 2019</span><div><h4>Commercial Credit Analyst · Banco Serfinanza</h4><p>Corporate financials and credit history analysis for lending decisions.</p><a class="site" href="https://bancoserfinanza.com/" target="_blank" rel="noopener">bancoserfinanza.com ↗</a></div></div>
+    </div>
+    <div>
+      <div class="sec-head"><h2 class="rv"><em>Credentials</em></h2></div>
+      <div class="row rv"><span class="d">2012 — 2017</span><div><h4>Universidad del Norte</h4><p>BA, Business Administration</p></div></div>
+      <div class="row rv"><span class="d">2014</span><div><h4>Valencia College</h4><p>HR Management Certificate · Orlando, FL</p></div></div>
+      <div class="row rv"><span class="d">2024</span><div><h4>Endeavor Accelerator</h4><p>Dream Bigger Program</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="final">
+  <div class="wrap">
+    <h2 class="rv">Let's build<br><em>something.</em></h2>
+    <p class="rv">Open to Customer Success and Client Operations roles. Book 30 minutes or write directly.</p>
+    <div class="btns rv" style="justify-content:center">
+      <a class="btn primary" href="https://calendly.com/avvyco/30min" target="_blank" rel="noopener">Book a call</a>
+      <a class="btn" href="mailto:valentin.rj@hotmail.com">valentin.rj@hotmail.com</a>
+    </div>
+    <div class="meta"><span>Barranquilla, Colombia</span><span>+57 312 623 0946 · +1 754 202 5286</span></div>
+  </div>
+</footer>
+
+<dialog id="lb"><button class="x" aria-label="Close">×</button><div class="box"><img alt=""><p></p></div></dialog>
 
 <script>
-  const projects = [
-    {
-      title:"Sales Orchestrator (Slack Agent)",
-      brief:"The command center: lives in #ventas, reads the live pipeline from the CRM, executes commercial tasks on command, and runs the other 8 agents by mention — zero terminal.",
-      results:"Add a metric here — e.g., hours of manual CRM admin removed per week.",
-      stack:"Claude Code · Anthropic API · Python · Slack Bolt (Socket Mode) · Attio API · GitHub API · DigitalOcean VPS + pm2",
-      link:null, linkLabel:null,
-      image:"./assets/proj-sales-orchestrator-1.jpg"
-    },
-    {
-      title:"WhatsApp SDR & Support Agent (\"Claudia\")",
-      brief:"Qualifies inbound prospects and answers customer support over WhatsApp, with human-like typing delay, persistent conversation history, and Slack alerts routed by urgency.",
-      results:"Add a metric here — e.g., % of inbound leads qualified without human intervention.",
-      stack:"Claude Code · Anthropic API · EvolutionAPI / Baileys · Docker · Python · VPS Deployment",
-      link:null, linkLabel:null,
-      image:"./assets/proj-claudia-1.jpg"
-    }
-  ];
-
-  function openProject(i){
-    const p = projects[i];
-    document.getElementById('modal-index').textContent = String(i+1).padStart(2,'0') + ' / 07 — FLAGSHIP';
-    document.getElementById('modal-title').textContent = p.title;
-    document.getElementById('modal-brief').textContent = p.brief;
-    document.getElementById('modal-results').textContent = p.results;
-    document.getElementById('modal-stack').textContent = p.stack;
-    document.getElementById('modal-img').src = p.image;
-    const actions = document.getElementById('modal-actions');
-    actions.innerHTML = p.link
-      ? '<a href="'+p.link+'" target="_blank" rel="noopener" class="modal-link">'+p.linkLabel+'</a>'
-      : '<p class="modal-note">Private / internal project — happy to walk through it live.</p>';
-    document.getElementById('project-modal').showModal();
-  }
-  document.getElementById('project-modal').addEventListener('click', function(e){
-    if(e.target === this) this.close();
-  });
-
-  function openLightbox(src, caption){
-    const img = document.getElementById('lightbox-img');
-    const pending = document.getElementById('lightbox-pending');
-    const cap = document.getElementById('lightbox-caption');
-    if(src){
-      img.src = src;
-      img.style.display = 'block';
-      pending.style.display = 'none';
-    } else {
-      img.removeAttribute('src');
-      img.style.display = 'none';
-      pending.style.display = 'flex';
-    }
-    cap.textContent = caption || '';
-    document.getElementById('lightbox').showModal();
-  }
-  document.getElementById('lightbox').addEventListener('click', function(e){
-    if(e.target === this) this.close();
-  });
+  // reveal on scroll
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+  // count-up
+  const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);
+    const t=+e.target.dataset.n,s=performance.now();(function f(n){const p=Math.min(1,(n-s)/1100);e.target.textContent=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString('en-US');if(p<1)requestAnimationFrame(f)})(s)}),{threshold:.6});
+  document.querySelectorAll('[data-n]').forEach(el=>co.observe(el));
+  // lightbox (click without dragging)
+  const lb=document.getElementById('lb'),lbi=lb.querySelector('img'),lbp=lb.querySelector('p');
+  function open(src,cap){lbi.src=src;lbp.textContent=cap||'';lb.showModal()}
+  lb.querySelector('.x').onclick=()=>lb.close(); lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+  document.querySelectorAll('[data-full]').forEach(el=>{let moved=0,x=0,sl=0,down=false;
+    el.addEventListener('pointerdown',e=>{down=true;moved=0;x=e.clientX;sl=el.scrollLeft});
+    window.addEventListener('pointerup',()=>down=false);
+    el.addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-x;moved=Math.max(moved,Math.abs(dx));if(el.classList.contains('pan'))el.scrollLeft=sl-dx});
+    el.addEventListener('click',()=>{if(moved<6)open(el.dataset.full,el.dataset.cap)})});
+  // video recaps: nothing downloads until play; mobile gets the 480p file
+  document.querySelectorAll('.vid').forEach(box=>{const v=box.querySelector('video'),b=box.querySelector('.play');
+    b.addEventListener('click',()=>{document.querySelectorAll('.vid video').forEach(o=>{if(o!==v)o.pause()});
+      if(!v.src)v.src=innerWidth<=640?v.dataset.srcSm:v.dataset.src;box.classList.add('on');v.controls=true;v.play()})});
+  // theme toggle
+  const root=document.documentElement;
+  document.getElementById('theme').onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark'};
 </script>
-
 </body>
 </html>

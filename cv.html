@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex" />
+<title>Valentín Rodríguez — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @page{size:letter;margin:0}
+  :root{--ink:#14181a;--ink2:#4a5156;--ink3:#8a9095;--line:#dcd9cf;--acc:#1f6f4a;--soft:#e9efe9;--bg:#fbfaf6}
+  *{box-sizing:border-box;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:var(--bg)}
+  body{font:400 9pt/1.42 'Inter',sans-serif;color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  .page{position:relative;width:8.5in;height:11in;padding:.42in .6in .45in;overflow:hidden;page-break-after:always;break-after:page}
+  .page:last-child{page-break-after:auto;break-after:auto}
+  header{display:flex;align-items:flex-end;gap:18px;padding-bottom:12px;border-bottom:1.5px solid var(--ink)}
+  header .id{flex:1}
+  .photo{flex:none;width:1.05in;height:1.3in;border-radius:99px 99px 10px 10px;overflow:hidden;background:#e9efe9;border:1px solid var(--line)}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block}
+  h1{font:400 34pt/.95 'Instrument Serif',serif;letter-spacing:-.03em}
+  h1 em{color:var(--acc)}
+  .role{margin-top:8px;font-size:10.5pt;color:var(--ink2)}
+  .role b{color:var(--ink);font-weight:600}
+  .open{display:inline-block;margin-bottom:7px;padding:3px 9px;border-radius:99px;background:var(--soft);color:var(--acc);font:500 7pt 'JetBrains Mono',monospace;letter-spacing:.05em;text-transform:uppercase}
+  .contact{text-align:right;font:400 7.8pt/1.65 'JetBrains Mono',monospace;color:var(--ink2)}
+  .contact b{color:var(--acc);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);margin:10px 0 11px;border:1px solid var(--line);border-radius:12px;background:#fff}
+  .stats div{padding:8px 14px;border-left:1px solid var(--line)}
+  .stats div:first-child{border-left:0}
+  .stats .n{font:400 25pt/1 'Instrument Serif',serif;letter-spacing:-.02em}
+  .stats .n small{font-size:.55em;color:var(--acc)}
+  .stats p{font-size:7.6pt;color:var(--ink2);line-height:1.3;margin-top:3px}
+  h2{font:500 7.4pt 'JetBrains Mono',monospace;letter-spacing:.09em;text-transform:uppercase;color:var(--acc);margin:0 0 8px;display:flex;align-items:center;gap:8px}
+  h2::after{content:"";flex:1;height:1px;background:var(--line)}
+  section{margin-bottom:12px}
+  .profile{font-size:9.5pt;color:var(--ink2);line-height:1.5}
+  .profile b{color:var(--ink);font-weight:600}
+  .job{margin-bottom:8px}
+  .job .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .job h3{font-size:10.2pt;font-weight:600}
+  .job h3 span{font-weight:400;color:var(--ink2)}
+  .job .when{font:400 7.2pt 'JetBrains Mono',monospace;color:var(--ink3);white-space:nowrap}
+  .job .sub{color:var(--ink2);margin:1px 0 3px}
+  .job .site{font:400 7.2pt 'JetBrains Mono',monospace;color:var(--acc);margin-left:6px}
+  .job ul{padding-left:12px}
+  .job li{margin-bottom:2px;color:var(--ink2)}
+  .job li b{color:var(--ink);font-weight:600}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+  .row{margin-bottom:5px;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 7px}
+  .row b{font-weight:600}
+  .row span{color:var(--ink2);font-size:8.4pt;flex:1 1 100%;order:3}
+  .row i{font:normal 7.1pt 'JetBrains Mono',monospace;color:var(--ink3);margin-left:auto}
+  .row a{color:var(--acc)}
+  .small .job{margin-bottom:6px}
+  .small .job h3{font-size:10pt}
+
+  /* page 2 */
+  .intro{color:var(--ink2);font-size:9.2pt;margin:-2px 0 10px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:11px;overflow:hidden}
+  .card .shot{background:#efece3;border-bottom:1px solid var(--line)}
+  .card .shot img{display:block;width:100%}
+  .card .body{padding:9px 11px 10px}
+  .card h3{font:400 15pt/1.05 'Instrument Serif',serif;letter-spacing:-.01em;margin-bottom:3px}
+  .card h3 em{font:500 6.6pt 'JetBrains Mono',monospace;color:var(--acc);font-style:normal;letter-spacing:.06em;text-transform:uppercase;margin-left:5px;vertical-align:middle}
+  .card p{font-size:8.4pt;color:var(--ink2);line-height:1.4}
+  .card .tags{margin-top:5px;font:400 6.7pt 'JetBrains Mono',monospace;color:var(--ink3)}
+  .wide .shot{height:1.25in;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#f4f1e8}
+  .wide .shot img{width:100%;height:auto}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:11px}
+  .grid3 .shot{height:2.25in;overflow:hidden}
+  .grid3 .shot img{height:100%;object-fit:cover;object-position:top left}
+  .grid3 .shot.dark{background:#fff}
+  .chips{display:flex;flex-wrap:wrap;gap:4px}
+  .chips span{padding:2px 7px;border-radius:99px;background:#fff;border:1px solid var(--line);font:400 7pt 'JetBrains Mono',monospace;color:var(--ink2)}
+  footer{position:absolute;left:.6in;right:.6in;bottom:.32in;display:flex;justify-content:space-between;font:400 6.9pt 'JetBrains Mono',monospace;color:var(--ink3);border-top:1px solid var(--line);padding-top:6px}
+  footer a{color:var(--acc)}
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 ============ -->
+<div class="page">
+  <header>
+    <div class="photo"><img src="./assets/valentin-profile-portrait.jpeg" alt="Valentín Rodríguez"></div>
+    <div class="id">
+      <span class="open">Open to Customer Success &amp; Client Operations roles</span>
+      <h1>Valentín <em>Rodríguez</em></h1>
+      <p class="role"><b>Customer Success &amp; Client Operations</b> · EdTech</p>
+    </div>
+    <div class="contact">
+      <b>valentin.rj@hotmail.com</b><br>
+      +57 312 623 0946 · +1 754 202 5286<br>
+      linkedin.com/in/valenrodriguez<br>
+      github.com/valentinrod<br>
+      Barranquilla, Colombia
+    </div>
+  </header>
+
+  <div class="stats">
+    <div><div class="n">100<small>+</small></div><p>tech professionals recruited &amp; placed</p></div>
+    <div><div class="n">4<small>+</small></div><p>years building &amp; running client operations functions</p></div>
+    <div><div class="n">4</div><p>companies co-founded since 2019</p></div>
+    <div><div class="n">2,100<small>+</small></div><p>active students supported across institutional accounts</p></div>
+  </div>
+
+  <section>
+    <h2>Profile</h2>
+    <p class="profile">Cofounder with 4+ years building and running <b>client operations</b> across EdTech and Talent: from customer onboarding and retention to the internal systems that keep a lean team running. Currently cofounding Supertest, an AI-personalized EdTech platform, where I own <b>customer success</b> for our institutional accounts and build, with Claude Code, the tools that run day-to-day operations.</p>
+  </section>
+
+  <section>
+    <h2>Companies founded</h2>
+
+    <div class="job">
+      <div class="top"><h3>Supertest <span>· Cofounder, Customer Success &amp; Client Operations</span></h3><span class="when">Jan 2026 — Present</span></div>
+      <p class="sub">AI-personalized EdTech platform preparing Colombian students for the Saber 11 and Saber Pro exams, sold B2B to schools and universities. <a class="site" href="https://supertest.co">supertest.co</a></p>
+      <ul>
+        <li>Manage onboarding and retention across <b>18 institutional accounts</b> (schools and universities), supporting <b>2,100+ active students</b>; projected <b>$200K ARR</b> for the platform.</li>
+        <li>Designed the customer success lifecycle, from signed deal to renewal, with a weekly traffic-light check that triggers a rescue plan. Agreed adoption goal: <b>30%+ of students active every week</b>.</li>
+        <li>Built the internal systems with Claude Code: a journey map, a daily sales cockpit, a ManyChat lead-capture setup and the customer success plan (see page 2).</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="top"><h3>Avvy Talent <span>· Co-Founder, People Ops &amp; Talent</span></h3><span class="when">Jan 2022 — Jun 2026</span></div>
+      <p class="sub">LATAM staff augmentation and recruiting agency serving U.S. and European tech companies. <a class="site" href="https://avvy.co">avvy.co</a></p>
+      <ul>
+        <li>Scaled to <b>$872K ARR</b> at peak, with <b>200+ tech talent placements</b> across <b>40+ client accounts</b> in the US and Europe.</li>
+        <li>Ran end-to-end people operations for fully remote teams.</li>
+        <li>Closed the agency in June 2026 through an <b>orderly wind-down</b> of client and contractor contracts.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="top"><h3>MondayLoop <span>· Co-Founder</span></h3><span class="when">Jan 2025 — Aug 2025</span></div>
+      <ul><li>Shipped a 4-app consumer portfolio (calorie tracker, dog breed ID, AI image tools) to <b>1,000+ downloads</b> before reallocating focus to Supertest.</li></ul>
+    </div>
+
+    <div class="job">
+      <div class="top"><h3>Rutana <span>· Co-Founder</span></h3><span class="when">Mar 2019 — Mar 2020</span></div>
+      <ul><li>Co-founded and operated a university car-sharing app across 4 campuses: <b>500+ shared rides</b> among <b>2,000+ users</b>.</li></ul>
+    </div>
+  </section>
+
+  <section class="small">
+    <h2>Earlier career</h2>
+    <div class="job">
+      <div class="top"><h3>Customer Experience Lead <span>· Farmu</span></h3><span class="when">Nov 2021 — Mar 2022</span></div>
+      <ul><li>Built the Customer Experience function from scratch at a VC-backed online drugstore marketplace: hiring, CRM and support tooling, KPIs and cross-team feedback loops. <a class="site" href="https://www.farmu.com.co/">farmu.com.co</a></li></ul>
+    </div>
+    <div class="job">
+      <div class="top"><h3>Settlements Coordinator <span>· Lean Solutions Group</span></h3><span class="when">Jun 2020 — Oct 2021</span></div>
+      <ul><li>Led contractor settlements across two U.S. logistics terminals: rate validation covering 200+ monthly payments. <a class="site" href="https://www.leangroup.com/">leangroup.com</a></li></ul>
+    </div>
+    <div class="job">
+      <div class="top"><h3>Commercial Credit Analyst <span>· Banco Serfinanza</span></h3><span class="when">Mar 2018 — Mar 2019</span></div>
+      <ul><li>Analyzed corporate financials and credit history to support lending decisions. <a class="site" href="https://bancoserfinanza.com/">bancoserfinanza.com</a></li></ul>
+    </div>
+  </section>
+
+  <footer><span>Valentín Rodríguez · Customer Success &amp; Client Operations</span><span>1 / 2</span></footer>
+</div>
+
+<!-- ============ PAGE 2 ============ -->
+<div class="page">
+  <section>
+    <h2>Systems built with Claude Code</h2>
+    <p class="intro">Customer success and client operations tools built solo for Supertest. Screenshots are from the real tools; institution and contact names are blurred.</p>
+
+    <div class="card wide">
+      <div class="shot"><img src="./assets/proj-journey-map.png" alt="Customer journey map"></div>
+      <div class="body">
+        <h3>Customer Journey Map <em>B2B + B2C</em></h3>
+        <p>One map of the whole journey, institutions and families, from first touch through sale to customer success. Each step shows its channels and flags what is still missing, so the commercial rules live in one place and the other tools stay aligned to it.</p>
+        <div class="tags">Claude Code · HTML / JS</div>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="card">
+        <div class="shot"><img src="./assets/proj-sales-cockpit.png" alt="Sales Cockpit"></div>
+        <div class="body">
+          <h3>Sales Cockpit</h3>
+          <p>Daily cockpit on the live CRM pipeline: who to contact today, replies first, then overdue follow-ups, with channel and one-click logging. Bulk instructions go to Claude in plain language and are proposed for approval.</p>
+          <div class="tags">Claude Code · Attio · n8n · ManyChat</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="shot"><img src="./assets/proj-manychat-flow.png" alt="ManyChat automations"></div>
+        <div class="body">
+          <h3>ManyChat Setup</h3>
+          <p>12 automations turn social conversations into qualified leads: Instagram DMs and comments move to WhatsApp, triage separates schools from families, and contacts sync to the CRM with an n8n follow-up engine.</p>
+          <div class="tags">ManyChat · WhatsApp · Instagram · n8n · Attio</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="shot"><img src="./assets/proj-customer-success-plan.png" alt="Customer Success Plan"></div>
+        <div class="body">
+          <h3>Customer Success Plan</h3>
+          <p>Six-stage lifecycle from signed deal to renewal, with a weekly traffic-light check and rescue plan. Goals: 30%+ weekly active students (agreed), 80%+ renewals and one referral or expansion per client (proposed).</p>
+          <div class="tags">Claude Code · Attio · Supabase · n8n</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="two" style="margin-top:14px">
+    <section>
+      <h2>Community &amp; events</h2>
+      <div class="row"><b>Supabase Community Meetups</b><span>Host · Bogotá, Barranquilla, Cartagena</span><i>2023 — Present</i></div>
+      <div class="row"><b>Caribedev.org</b><span>Community sponsor</span><i>2023 — Present</i></div>
+      <div class="row"><b>RevenueCat Shipathon</b><span>Barranquilla</span><i>2025</i></div>
+      <div class="row"><b>Startup Grind Global</b><span>Startup Pitches speaker · San Francisco</span><i>2024</i></div>
+    </section>
+    <section>
+      <h2>Education &amp; programs</h2>
+      <div class="row"><b>Universidad del Norte</b><span>BA, Business Administration · Barranquilla</span><i>2012 — 2017</i></div>
+      <div class="row"><b>Valencia College</b><span>HR Management Certificate · Orlando, FL</span><i>2014</i></div>
+      <div class="row"><b>Endeavor Accelerator</b><span>Dream Bigger Program</span><i>2024</i></div>
+    </section>
+  </div>
+
+  <section>
+    <h2>Partners &amp; tools</h2>
+    <div class="chips" style="margin-bottom:6px"><span>Supabase</span><span>RevenueCat</span><span>Endeavor Colombia</span><span>Caribedev</span><span>Crafter Station</span></div>
+    <div class="chips"><span>Claude Code</span><span>Attio</span><span>ManyChat</span><span>n8n</span><span>Supabase</span><span>WhatsApp</span><span>Instagram</span></div>
+  </section>
+
+  <footer><span>Book a call: <a href="https://calendly.com/avvyco/30min">calendly.com/avvyco/30min</a></span><span>2 / 2</span></footer>
+</div>
+
+</body>
+</html>
